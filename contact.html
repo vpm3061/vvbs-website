@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – VVBS Digital Media</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="circuit-bg"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-text">VVBS Digital</span>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="media-network.html">Media Network</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="clients.html">Clients</a>
+        <a href="contact.html" class="active">Contact</a>
+       <a href="library.html">Library</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="min-height: 30vh;">
+      <div class="container">
+        <h1>Get in <span class="gradient-text">Touch</span></h1>
+        <p>Let's discuss how we can help you grow digitally.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid-2">
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <h3 style="color: var(--accent); margin-bottom: 2rem;">Contact Information</h3>
+            
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <strong>Phone</strong>
+                <p>+91 9717233972</p>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                <p>tellitorg1@gmail.com</p>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>Address</strong>
+                <p>3rd Floor, Noida One, Sector 62, Noida – 201309</p>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Office Hours</strong>
+                <p>Monday – Saturday, 10:00 AM – 7:00 PM</p>
+              </div>
+            </div>
+            
+            <div style="margin-top: 2rem; padding: 1rem; background: rgba(0,200,255,0.1); border-left: 3px solid var(--accent);">
+              <p><strong style="color: var(--accent);">A Unit of VJenix Futuristic Technologies</strong></p>
+            </div>
+          </div>
+          
+          <!-- Contact Form - FormSubmit.co -->
+          <div class="contact-form">
+            <h3 style="color: var(--accent); margin-bottom: 2rem;">Send us a Message</h3>
+            
+            <form action="https://formsubmit.co/tellitorg1@gmail.com" method="POST" class="contact-form">
+              <!-- Important hidden fields -->
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="http://localhost:8000/thank-you.html">  <!-- Local testing ke liye, deploy ke baad change karna -->
+              <input type="hidden" name="_template" value="box">
+              <input type="text" name="_honey" style="display:none"> <!-- Spam protection -->
+              
+              <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="organization" placeholder="Organization (Optional)">
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" placeholder="Email Address" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" name="phone" placeholder="Phone Number">
+              </div>
+              <div class="form-group">
+                <textarea name="message" rows="5" placeholder="How can we help you?" required></textarea>
+              </div>
+              
+              <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+            </form>
+            
+            <p style="color: #a0a8c0; font-size: 0.9rem; margin-top: 1rem; text-align: center;">
+              We typically respond within 24 hours.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section style="padding: 2rem 0;">
+      <div class="container">
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid rgba(0,200,255,0.2);">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.123456789012!2d77.3690!3d28.4989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce6263c3b3b3b%3A0x3b3b3b3b3b3b3b!2sNoida%20One!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="company">VVBS Digital Media</div>
+      <p style="color: var(--accent); margin-bottom: 0.5rem;">A Unit of VJenix Futuristic Technologies</p>
+      <p>© 2025 VVBS Digital Media Management & IT Network. All rights reserved.</p>
+      <p>Phone: <a href="tel:9717233972">9717233972</a> | Email: <a href="mailto:tellitorg1@gmail.com">tellitorg1@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

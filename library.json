@@ -1,0 +1,38 @@
+{
+  "categories": [
+    {
+      "name": "Coaching Institutes",
+      "slug": "coaching",
+      "papers": [
+        {
+          "title": "VVBS Pitch",
+          "description": "About VVBS Digital Media Management & IT Network – A Unit of VJenix Futuristic Technologies. This document explains our vision, services, and digital ecosystem.",
+          "fileId": "17cY8ndtgkLIjfD7c9E3O16stcv3MjYxQ",
+          "date": "2025",
+          "authors": "Savya Sanchi Mishra",
+          "pages": 5
+        }
+      ]
+    },
+    {
+      "name": "Educational Organizations",
+      "slug": "education",
+      "papers": []
+    },
+    {
+      "name": "Political Organizations",
+      "slug": "political",
+      "papers": []
+    },
+    {
+      "name": "Public Figures",
+      "slug": "public-figures",
+      "papers": []
+    },
+    {
+      "name": "Brands & Companies",
+      "slug": "brands",
+      "papers": []
+    }
+  ]
+}

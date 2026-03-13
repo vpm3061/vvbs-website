@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You – VVBS Digital Media</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="/manifest.json">
+  <style>
+    body {
+      background: #0a192f;
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .thank-you-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(0,200,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0,200,255,0.2);
+      border-radius: 30px;
+      padding: 3rem;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #00c8ff, #9b5de5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p {
+      color: #a0a8c0;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #00c8ff, #9b5de5);
+      color: black;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .redirect-note {
+      color: #4a5568;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="thank-you-container">
+    <h1>Thank You!</h1>
+    <p>Your message has been sent successfully.<br>We'll get back to you within 24 hours.</p>
+    <a href="index.html" class="btn">Return to Home</a>
+    <p class="redirect-note">You will be redirected in <span id="countdown">5</span> seconds...</p>
+  </div>
+
+  <script>
+    // Auto-redirect after 5 seconds
+    let seconds = 5;
+    const countdownEl = document.getElementById('countdown');
+    setInterval(() => {
+      seconds--;
+      if (countdownEl) countdownEl.textContent = seconds;
+      if (seconds <= 0) {
+        window.location.href = 'index.html';
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
