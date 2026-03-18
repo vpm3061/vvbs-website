@@ -8,6 +8,124 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <meta name="theme-color" content="#00c8ff">
+  <style>
+    /* Hero Slider Styles */
+    .hero-slider {
+      width: 100%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,200,255,0.2);
+    }
+
+    .slider-container {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .slide-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(10,25,47,0.9));
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .slide-caption h3 {
+      font-size: 1.8rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .slide-caption p {
+      font-size: 1rem;
+      color: #a0a8c0;
+    }
+
+    /* Navigation arrows */
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background: rgba(0,200,255,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 10;
+      transition: 0.3s;
+      backdrop-filter: blur(5px);
+    }
+
+    .slider-arrow:hover {
+      background: var(--accent);
+      color: black;
+    }
+
+    .prev {
+      left: 20px;
+    }
+
+    .next {
+      right: 20px;
+    }
+
+    /* Navigation dots */
+    .slider-dots {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .dot.active {
+      background: var(--accent);
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .slide img {
+        height: 300px;
+      }
+      .slide-caption h3 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="circuit-bg"></div>
@@ -43,7 +161,68 @@
       </div>
     </section>
 
-    <!-- Introduction -->
+    <!-- HERO SLIDER (Leadership Photos) -->
+    <section>
+      <div class="hero-slider" id="heroSlider">
+        <div class="slider-container" id="sliderContainer">
+          <!-- Slide 1: Chirag Paswan (Individual) -->
+          <div class="slide">
+            <img src="images/chirag-paswan-1.jpg" alt="With Chirag Paswan">
+            <div class="slide-caption">
+              <h3>श्री चिराग पासवान जी</h3>
+              <p>सांसद, लोक जनशक्ति पार्टी (रामविलास) – डिजिटल मीडिया रणनीति पर चर्चा</p>
+            </div>
+          </div>
+          <!-- Slide 2: Chirag Paswan with Team -->
+          <div class="slide">
+            <img src="images/chirag-team.jpg" alt="VVBS Team with Chirag Paswan">
+            <div class="slide-caption">
+              <h3>टीम वीवीबीएस के साथ</h3>
+              <p>श्री चिराग पासवान जी – युवा आउटरीच अभियान की रणनीति</p>
+            </div>
+          </div>
+          <!-- Slide 3: Rahul Gandhi (NYAY Manch) -->
+          <div class="slide">
+            <img src="images/rahul-gandhi-nyay.jpg" alt="With Rahul Gandhi - NYAY Manch">
+            <div class="slide-caption">
+              <h3>श्री राहुल गांधी जी</h3>
+              <p>NYAY Manch अभियान के दौरान – डिजिटल कम्युनिकेशन सहयोग</p>
+            </div>
+          </div>
+          <!-- Slide 4: Dr. Dinesh Sharma Meeting -->
+          <div class="slide">
+            <img src="images/dinesh-sharma-meeting.jpg" alt="Meeting with Dr. Dinesh Sharma">
+            <div class="slide-caption">
+              <h3>डॉ. दिनेश शर्मा जी</h3>
+              <p>सांसद, राज्यसभा (भाजपा) – पूर्व उपमुख्यमंत्री, उत्तर प्रदेश</p>
+            </div>
+          </div>
+          <!-- Slide 5: Dr. Dinesh Sharma with Team -->
+          <div class="slide">
+            <img src="images/dinesh-sharma-team.jpg" alt="VVBS Team with Dr. Dinesh Sharma">
+            <div class="slide-caption">
+              <h3>टीम वीवीबीएस के साथ</h3>
+              <p>डॉ. दिनेश शर्मा जी – डिजिटल शिक्षा और युवा नेतृत्व पर चर्चा</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="slider-arrow prev" onclick="changeSlide(-1)">&#10094;</div>
+        <div class="slider-arrow next" onclick="changeSlide(1)">&#10095;</div>
+
+        <!-- Dots -->
+        <div class="slider-dots" id="sliderDots">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction (rest of your page continues unchanged) -->
     <section>
       <div class="container">
         <h2 class="section-title">Who We Are</h2>
@@ -177,5 +356,55 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // Hero Slider JavaScript
+    let slideIndex = 1;
+    let autoSlideInterval;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const sliderContainer = document.getElementById('sliderContainer');
+    const totalSlides = slides.length;
+
+    function showSlide(n) {
+      if (n > totalSlides) slideIndex = 1;
+      if (n < 1) slideIndex = totalSlides;
+      sliderContainer.style.transform = `translateX(-${(slideIndex-1) * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[slideIndex-1].classList.add('active');
+    }
+
+    window.changeSlide = function(n) {
+      slideIndex += n;
+      showSlide(slideIndex);
+      resetAutoSlide();
+    }
+
+    window.currentSlide = function(n) {
+      slideIndex = n;
+      showSlide(slideIndex);
+      resetAutoSlide();
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(() => {
+        slideIndex++;
+        showSlide(slideIndex);
+      }, 4000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+
+    // Pause on hover
+    const slider = document.getElementById('heroSlider');
+    slider.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    slider.addEventListener('mouseleave', startAutoSlide);
+
+    // Initialize
+    showSlide(1);
+    startAutoSlide();
+  </script>
 </body>
 </html>
