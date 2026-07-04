@@ -1,410 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VVBS Digital Media – A Unit of VJenix Futuristic Technologies</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <meta name="theme-color" content="#00c8ff">
-  <style>
-    /* Hero Slider Styles */
-    .hero-slider {
-      width: 100%;
-      max-width: 1200px;
-      margin: 2rem auto;
-      position: relative;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,200,255,0.2);
-    }
-
-    .slider-container {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slide {
-      min-width: 100%;
-      position: relative;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .slide-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(transparent, rgba(10,25,47,0.9));
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .slide-caption h3 {
-      font-size: 1.8rem;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-
-    .slide-caption p {
-      font-size: 1rem;
-      color: #a0a8c0;
-    }
-
-    /* Navigation arrows */
-    .slider-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-      background: rgba(0,200,255,0.3);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      z-index: 10;
-      transition: 0.3s;
-      backdrop-filter: blur(5px);
-    }
-
-    .slider-arrow:hover {
-      background: var(--accent);
-      color: black;
-    }
-
-    .prev {
-      left: 20px;
-    }
-
-    .next {
-      right: 20px;
-    }
-
-    /* Navigation dots */
-    .slider-dots {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-      z-index: 10;
-    }
-
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.5);
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .dot.active {
-      background: var(--accent);
-      transform: scale(1.2);
-    }
-
-    @media (max-width: 768px) {
-      .slide img {
-        height: 300px;
-      }
-      .slide-caption h3 {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Black Bug — iOS, Android, Web Apps &amp; Websites</title>
+<meta name="description" content="Black Bug builds iOS, Android, Web Apps and Websites — static and dynamic. Fast delivery, direct communication, affordable custom solutions." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="circuit-bg"></div>
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
 
-  <header>
-    <div class="container">
-      <a href="index.html" class="logo">
-        <span class="logo-text">VVBS Digital</span>
+<div class="cursor-glow" id="cursor-glow"></div>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#top" class="logo">Black<span>Bug</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#enquiry" class="nav-cta">Get Quote</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <p class="hero-eyebrow" data-animate>Software &amp; Web Development Studio</p>
+    <h1 class="hero-title" data-animate>Black<span>Bug</span></h1>
+    <p class="hero-tagline" id="typing-tagline" aria-live="polite"></p>
+    <div class="hero-actions" data-animate>
+      <a href="https://wa.me/919717233972?text=Hi%20Black%20Bug%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services" target="_blank" rel="noopener" class="btn btn-primary">Chat on WhatsApp</a>
+      <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><span></span></div>
+</header>
+
+<section class="stats" data-animate>
+  <div class="stats-inner">
+    <div class="stat">
+      <span class="stat-number" data-target="60">0</span><span class="stat-suffix">+</span>
+      <p>Projects Delivered</p>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+      <p>Years Experience</p>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-target="45">0</span><span class="stat-suffix">+</span>
+      <p>Happy Clients</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-inner">
+    <p class="section-eyebrow" data-animate>Services</p>
+    <h2 class="section-title" data-animate>Transparent starting prices</h2>
+
+    <div class="pricing-grid">
+      <div class="pricing-card" data-animate data-project="Static Website">
+        <h3>Static Website</h3>
+        <p class="price">₹6,000<span>starting</span></p>
+        <ul>
+          <li>Landing / brochure site</li>
+          <li>Mobile responsive</li>
+          <li>Up to 5 pages</li>
+        </ul>
+        <button class="btn btn-outline btn-quote" data-project="Static Website">Get Custom Quote</button>
+      </div>
+
+      <div class="pricing-card" data-animate data-project="Dynamic Website">
+        <h3>Dynamic Website</h3>
+        <p class="price">₹18,000<span>starting</span></p>
+        <ul>
+          <li>CMS / database driven</li>
+          <li>Admin panel</li>
+          <li>Forms &amp; integrations</li>
+        </ul>
+        <button class="btn btn-outline btn-quote" data-project="Dynamic Website">Get Custom Quote</button>
+      </div>
+
+      <div class="pricing-card" data-animate data-project="Web App">
+        <h3>Web App</h3>
+        <p class="price">₹30,000<span>starting</span></p>
+        <ul>
+          <li>Custom business logic</li>
+          <li>User accounts &amp; dashboards</li>
+          <li>API integrations</li>
+        </ul>
+        <button class="btn btn-outline btn-quote" data-project="Web App">Get Custom Quote</button>
+      </div>
+
+      <div class="pricing-card" data-animate data-project="Android App">
+        <h3>Android App</h3>
+        <p class="price">₹35,000<span>starting</span></p>
+        <ul>
+          <li>Native / cross-platform</li>
+          <li>Play Store ready</li>
+          <li>Backend integration</li>
+        </ul>
+        <button class="btn btn-outline btn-quote" data-project="Android App">Get Custom Quote</button>
+      </div>
+
+      <div class="pricing-card" data-animate data-project="iOS App">
+        <h3>iOS App</h3>
+        <p class="price">₹45,000<span>starting</span></p>
+        <ul>
+          <li>Native / cross-platform</li>
+          <li>App Store ready</li>
+          <li>Backend integration</li>
+        </ul>
+        <button class="btn btn-outline btn-quote" data-project="iOS App">Get Custom Quote</button>
+      </div>
+
+      <div class="pricing-card pricing-card-highlight" data-animate data-project="iOS + Android Combo">
+        <p class="badge">Best Value</p>
+        <h3>iOS + Android Combo</h3>
+        <p class="price">₹70,000<span>starting</span></p>
+        <ul>
+          <li>Both platforms, one codebase</li>
+          <li>Shared backend</li>
+          <li>Store submission support</li>
+        </ul>
+        <button class="btn btn-primary btn-quote" data-project="iOS + Android Combo">Get Custom Quote</button>
+      </div>
+    </div>
+
+    <p class="pricing-disclaimer" data-animate>
+      Upar diye gaye rates basic/starter projects ke liye hain. Final pricing aapke exact
+      requirements (features, design complexity, third-party integrations, timeline) ke
+      hisaab se tay hoti hai. Enquiry form fill karein — hum aapki details dekhkar accurate
+      quote denge, bilkul free consultation ke saath.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="portfolio">
+  <div class="section-inner">
+    <p class="section-eyebrow" data-animate>Portfolio</p>
+    <h2 class="section-title" data-animate>Work we're proud of</h2>
+
+    <div class="portfolio-grid">
+      <a class="portfolio-card tilt-card" data-animate href="https://gigway.in" target="_blank" rel="noopener">
+        <div class="portfolio-thumb thumb-1"><span>gigway.in</span></div>
+        <div class="portfolio-info">
+          <h3>Gigway</h3>
+          <p>Web App</p>
+        </div>
       </a>
-      <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="media-network.html">Media Network</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="clients.html">Clients</a>
-        <a href="contact.html">Contact</a>
-        <a href="library.html">Library</a>
-      </nav>
+
+      <a class="portfolio-card tilt-card" data-animate href="https://orenzaa.com" target="_blank" rel="noopener">
+        <div class="portfolio-thumb thumb-2"><span>orenzaa.com</span></div>
+        <div class="portfolio-info">
+          <h3>Orenzaa</h3>
+          <p>Website</p>
+        </div>
+      </a>
+
+      <a class="portfolio-card tilt-card" data-animate href="https://leaderiq.in" target="_blank" rel="noopener">
+        <div class="portfolio-thumb thumb-3"><span>leaderiq.in</span></div>
+        <div class="portfolio-info">
+          <h3>LeaderIQ</h3>
+          <p>Web App</p>
+        </div>
+      </a>
+
+      <a class="portfolio-card tilt-card" data-animate href="https://vjenix.com" target="_blank" rel="noopener">
+        <div class="portfolio-thumb thumb-4"><span>vjenix.com</span></div>
+        <div class="portfolio-info">
+          <h3>Vjenix</h3>
+          <p>Website</p>
+        </div>
+      </a>
+
+      <div class="portfolio-card tilt-card" data-animate>
+        <div class="portfolio-thumb thumb-5"><span>Tapasya</span></div>
+        <div class="portfolio-info">
+          <h3>Tapasya App</h3>
+          <p>Mobile App</p>
+        </div>
+      </div>
+
+      <div class="portfolio-card tilt-card" data-animate>
+        <div class="portfolio-thumb thumb-6"><span>VVBS</span></div>
+        <div class="portfolio-info">
+          <h3>VVBS Digital</h3>
+          <p>Digital Media Website</p>
+        </div>
+      </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <h1>Building <span class="gradient-text">Digital Media Ecosystems</span><br>for the Future</h1>
-        <p>VVBS Digital Media Management & IT Network helps organizations manage, grow, and optimize their digital platforms through content creation, social media management, and digital ecosystem development.</p>
-        <p><strong style="color: var(--accent);">A Unit of VJenix Futuristic Technologies</strong></p>
-        <a href="contact.html" class="btn">Start Your Journey</a>
+<section class="section" id="why-us">
+  <div class="section-inner">
+    <p class="section-eyebrow" data-animate>Why Choose Us</p>
+    <h2 class="section-title" data-animate>Built for speed, trust and results</h2>
+
+    <div class="why-grid">
+      <div class="why-card" data-animate>
+        <h3>Fast Delivery</h3>
+        <p>Most projects shipped in weeks, not months — without cutting corners.</p>
       </div>
-    </section>
-
-    <!-- HERO SLIDER (Leadership Photos) -->
-    <section>
-      <div class="hero-slider" id="heroSlider">
-        <div class="slider-container" id="sliderContainer">
-          <!-- Slide 1: Chirag Paswan (Individual) -->
-          <div class="slide">
-            <img src="images/chirag-paswan-1.jpg" alt="With Chirag Paswan">
-            <div class="slide-caption">
-              <h3>श्री चिराग पासवान जी</h3>
-              <p>सांसद, लोक जनशक्ति पार्टी (रामविलास) – डिजिटल मीडिया रणनीति पर चर्चा</p>
-            </div>
-          </div>
-          <!-- Slide 2: Chirag Paswan with Team -->
-          <div class="slide">
-            <img src="images/chirag-team.jpg" alt="VVBS Team with Chirag Paswan">
-            <div class="slide-caption">
-              <h3>टीम वीवीबीएस के साथ</h3>
-              <p>श्री चिराग पासवान जी – युवा आउटरीच अभियान की रणनीति</p>
-            </div>
-          </div>
-          <!-- Slide 3: Rahul Gandhi (NYAY Manch) -->
-          <div class="slide">
-            <img src="images/rahul-gandhi-nyay.jpg" alt="With Rahul Gandhi - NYAY Manch">
-            <div class="slide-caption">
-              <h3>श्री राहुल गांधी जी</h3>
-              <p>NYAY Manch अभियान के दौरान – डिजिटल कम्युनिकेशन सहयोग</p>
-            </div>
-          </div>
-          <!-- Slide 4: Dr. Dinesh Sharma Meeting -->
-          <div class="slide">
-            <img src="images/dinesh-sharma-meeting.jpg" alt="Meeting with Dr. Dinesh Sharma">
-            <div class="slide-caption">
-              <h3>डॉ. दिनेश शर्मा जी</h3>
-              <p>सांसद, राज्यसभा (भाजपा) – पूर्व उपमुख्यमंत्री, उत्तर प्रदेश</p>
-            </div>
-          </div>
-          <!-- Slide 5: Dr. Dinesh Sharma with Team -->
-          <div class="slide">
-            <img src="images/dinesh-sharma-team.jpg" alt="VVBS Team with Dr. Dinesh Sharma">
-            <div class="slide-caption">
-              <h3>टीम वीवीबीएस के साथ</h3>
-              <p>डॉ. दिनेश शर्मा जी – डिजिटल शिक्षा और युवा नेतृत्व पर चर्चा</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Navigation Arrows -->
-        <div class="slider-arrow prev" onclick="changeSlide(-1)">&#10094;</div>
-        <div class="slider-arrow next" onclick="changeSlide(1)">&#10095;</div>
-
-        <!-- Dots -->
-        <div class="slider-dots" id="sliderDots">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-          <span class="dot" onclick="currentSlide(4)"></span>
-          <span class="dot" onclick="currentSlide(5)"></span>
-        </div>
+      <div class="why-card" data-animate>
+        <h3>Direct Communication</h3>
+        <p>You talk straight to the person building your product. No middlemen.</p>
       </div>
-    </section>
-
-    <!-- Introduction (rest of your page continues unchanged) -->
-    <section>
-      <div class="container">
-        <h2 class="section-title">Who We Are</h2>
-        <div style="text-align: center; max-width: 900px; margin: 0 auto;">
-          <p style="font-size: 1.2rem; color: #a0a8c0;">VVBS – Vijay Vidya-R Bhawan Sansthan – represents family values and dedication to education, knowledge, and digital communication. We are a digital media management network that builds and manages complete digital ecosystems for organizations.</p>
-        </div>
+      <div class="why-card" data-animate>
+        <h3>Affordable Pricing</h3>
+        <p>Transparent starting rates with no hidden costs or surprise add-ons.</p>
       </div>
-    </section>
-
-    <!-- Two Divisions -->
-    <section style="background: rgba(0,0,0,0.3);">
-      <div class="container">
-        <h2 class="section-title">Our Two Divisions</h2>
-        <div class="grid-2">
-          <div class="card">
-            <i class="fas fa-broadcast-tower" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
-            <h3>VVBS Digital Media Network</h3>
-            <p>Our owned media properties: YouTube channels, podcasts, and social communities that distribute educational and engaging content.</p>
-            <div style="margin-top: 1rem;">
-              <span class="badge">HistoryXShorts</span>
-              <span class="badge">VVBS Civils</span>
-              <span class="badge">TeachPod</span>
-            </div>
-          </div>
-          <div class="card">
-            <i class="fas fa-cogs" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
-            <h3>VVBS Digital Media Management & IT Network</h3>
-            <p>Client services: content creation, platform management, growth strategy, and digital ecosystem development.</p>
-          </div>
-        </div>
+      <div class="why-card" data-animate>
+        <h3>Custom Solutions</h3>
+        <p>Every build is tailored to your exact requirements — never a generic template.</p>
       </div>
-    </section>
-
-    <!-- Ecosystem Diagram -->
-    <section>
-      <div class="container">
-        <h2 class="section-title">Our Ecosystem</h2>
-        <div class="ecosystem">
-          <div class="node">VJenix Futuristic Technologies</div>
-          <div class="arrow">↓</div>
-          <div class="node-group">
-            <span>GigWay</span>
-            <span>Vijox</span>
-            <span>Vijako</span>
-            <span>Booth Vijay</span>
-          </div>
-          <div class="arrow">↓</div>
-          <div class="node">VVBS Digital Media Network</div>
-          <div class="arrow">↓</div>
-          <div class="node">VVBS Digital Media Management</div>
-          <div class="arrow">↓</div>
-          <div class="node">Client Digital Platforms</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Preview -->
-    <section style="background: rgba(0,0,0,0.3);">
-      <div class="container">
-        <h2 class="section-title">Our Services</h2>
-        <div class="grid-3">
-          <div class="card">
-            <i class="fas fa-youtube" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
-            <h3>Digital Platform Management</h3>
-            <p>YouTube, Instagram, Twitter, Facebook, websites – end-to-end management.</p>
-          </div>
-          <div class="card">
-            <i class="fas fa-video" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
-            <h3>Content Creation</h3>
-            <p>Educational videos, shorts, podcasts, promotional clips tailored to your audience.</p>
-          </div>
-          <div class="card">
-            <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--accent); margin-bottom: 1rem;"></i>
-            <h3>Social Media Growth</h3>
-            <p>Algorithm optimization, audience engagement, community building.</p>
-          </div>
-        </div>
-        <div style="text-align: center; margin-top: 2rem;">
-          <a href="services.html" class="btn">View All Services</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Media Network Preview -->
-    <section>
-      <div class="container">
-        <h2 class="section-title">Our Media Network</h2>
-        <div class="grid-2">
-          <div class="card">
-            <h3>📺 YouTube Channels</h3>
-            <ul style="color: #a0a8c0; list-style: none;">
-              <li>• HistoryXShorts</li>
-              <li>• VVBS Civils</li>
-              <li>• VVBS Stories</li>
-              <li>• TeachPod Podcast</li>
-              <li>• Horizon Motion Pictures</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>🐦 Social Communities</h3>
-            <ul style="color: #a0a8c0; list-style: none;">
-              <li>• StudentsUnionIndia (Twitter) – 9000+ members</li>
-              <li>• Instagram: @vvbsdigital</li>
-              <li>• Facebook: VVBS Digital Media</li>
-            </ul>
-          </div>
-        </div>
-        <div style="text-align: center; margin-top: 2rem;">
-          <a href="media-network.html" class="btn">Explore Network</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section style="background: linear-gradient(135deg, var(--primary), #0b2b4a);">
-      <div class="container" style="text-align: center;">
-        <h2 style="color: white; font-size: 2rem;">Ready to Build Your Digital Ecosystem?</h2>
-        <p style="margin: 2rem 0; color: #a0a8c0;">Get in touch with us today.</p>
-        <a href="contact.html" class="btn" style="background: white; color: var(--primary);">Contact Us</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="company">VVBS Digital Media</div>
-      <p style="color: var(--accent); margin-bottom: 0.5rem;">A Unit of VJenix Futuristic Technologies</p>
-      <p>© 2025 VVBS Digital Media Management & IT Network. All rights reserved.</p>
-      <p>Phone: <a href="tel:9717233972">9717233972</a> | Email: <a href="mailto:tellitorg1@gmail.com">tellitorg1@gmail.com</a></p>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="js/main.js"></script>
-  <script>
-    // Hero Slider JavaScript
-    let slideIndex = 1;
-    let autoSlideInterval;
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    const sliderContainer = document.getElementById('sliderContainer');
-    const totalSlides = slides.length;
+<section class="section" id="enquiry">
+  <div class="section-inner">
+    <p class="section-eyebrow" data-animate>Get In Touch</p>
+    <h2 class="section-title" data-animate>Tell us about your project</h2>
 
-    function showSlide(n) {
-      if (n > totalSlides) slideIndex = 1;
-      if (n < 1) slideIndex = totalSlides;
-      sliderContainer.style.transform = `translateX(-${(slideIndex-1) * 100}%)`;
-      dots.forEach(dot => dot.classList.remove('active'));
-      dots[slideIndex-1].classList.add('active');
-    }
+    <div class="enquiry-card" data-animate>
+      <form id="enquiry-form" class="enquiry-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required autocomplete="tel" />
+          </div>
+        </div>
 
-    window.changeSlide = function(n) {
-      slideIndex += n;
-      showSlide(slideIndex);
-      resetAutoSlide();
-    }
+        <div class="form-row">
+          <div class="form-group">
+            <label for="project_type">Project Type</label>
+            <select id="project_type" name="project_type" required>
+              <option value="" disabled selected>Select project type</option>
+              <option value="Static Website">Static Website</option>
+              <option value="Dynamic Website">Dynamic Website</option>
+              <option value="Web App">Web App</option>
+              <option value="Android App">Android App</option>
+              <option value="iOS App">iOS App</option>
+              <option value="iOS + Android Combo">iOS + Android Combo</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="budget_range">Budget Range</label>
+            <select id="budget_range" name="budget_range" required>
+              <option value="" disabled selected>Select budget range</option>
+              <option value="Under 10k">Under ₹10,000</option>
+              <option value="10k-50k">₹10,000 - ₹50,000</option>
+              <option value="50k-1L">₹50,000 - ₹1,00,000</option>
+              <option value="1L+">₹1,00,000+</option>
+            </select>
+          </div>
+        </div>
 
-    window.currentSlide = function(n) {
-      slideIndex = n;
-      showSlide(slideIndex);
-      resetAutoSlide();
-    }
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us briefly what you need..."></textarea>
+        </div>
 
-    function startAutoSlide() {
-      autoSlideInterval = setInterval(() => {
-        slideIndex++;
-        showSlide(slideIndex);
-      }, 4000);
-    }
+        <button type="submit" id="submit-btn" class="btn btn-primary btn-block">Submit Enquiry</button>
+      </form>
 
-    function resetAutoSlide() {
-      clearInterval(autoSlideInterval);
-      startAutoSlide();
-    }
+      <div id="form-status" class="form-status" hidden></div>
+    </div>
+  </div>
+</section>
 
-    // Pause on hover
-    const slider = document.getElementById('heroSlider');
-    slider.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
-    slider.addEventListener('mouseleave', startAutoSlide);
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Black<span>Bug</span></div>
+    <div class="footer-details">
+      <p>tellitorg1@gmail.com</p>
+      <p>New Delhi, India</p>
+      <a href="https://wa.me/919717233972" target="_blank" rel="noopener">+91 97172 33972</a>
+    </div>
+    <p class="footer-copy">&copy; <span id="year"></span> Black Bug. All rights reserved.</p>
+  </div>
+</footer>
 
-    // Initialize
-    showSlide(1);
-    startAutoSlide();
-  </script>
+<a class="whatsapp-float" href="https://wa.me/919717233972?text=Hi%20Black%20Bug%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" width="28" height="28"><path d="M16.004 3C9.376 3 4 8.373 4 15c0 2.386.696 4.61 1.897 6.478L4 29l7.72-1.86A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3zm0 21.75c-1.98 0-3.83-.55-5.41-1.5l-.388-.23-4.583 1.104 1.127-4.46-.253-.398A9.71 9.71 0 0 1 5.25 15c0-5.93 4.824-10.75 10.754-10.75S26.75 9.07 26.75 15 21.934 24.75 16.004 24.75zm5.98-8.146c-.328-.164-1.94-.957-2.24-1.066-.3-.11-.518-.164-.737.164-.218.328-.847 1.066-1.038 1.285-.19.218-.382.246-.71.082-.328-.164-1.386-.51-2.64-1.628-.976-.87-1.635-1.945-1.826-2.273-.19-.328-.02-.505.144-.668.148-.147.328-.383.492-.574.164-.19.218-.328.328-.546.11-.218.055-.41-.028-.574-.082-.164-.737-1.775-1.01-2.43-.266-.64-.535-.554-.737-.564l-.628-.011c-.218 0-.573.082-.874.41-.3.328-1.147 1.12-1.147 2.73s1.174 3.166 1.338 3.385c.164.218 2.31 3.527 5.598 4.945.782.338 1.393.54 1.87.69.786.25 1.5.215 2.064.13.63-.094 1.94-.793 2.213-1.558.273-.766.273-1.42.19-1.558-.082-.137-.3-.218-.628-.383z"/></svg>
+</a>
+
+<script src="js/main.js"></script>
+<script src="js/enquiry.js"></script>
 </body>
 </html>
