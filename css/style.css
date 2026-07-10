@@ -288,8 +288,7 @@ ul {
   font-family: var(--font-head);
 }
 
-.stat-number,
-.stat-suffix {
+.stat-number {
   font-size: clamp(32px, 5vw, 48px);
   font-weight: 700;
   color: var(--accent);
@@ -471,6 +470,117 @@ ul {
   margin: 0;
   font-size: 13px;
   color: var(--text-muted);
+}
+
+/* ---------- alternating section background ---------- */
+.section-alt {
+  background: var(--bg-alt);
+}
+
+/* ---------- tech stack ---------- */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 20px;
+}
+
+.tech-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 16px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.tech-badge:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.tech-badge p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.tech-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 20px;
+  color: #0a0a0f;
+}
+
+.tech-html { background: #e34f26; }
+.tech-css { background: #1572b6; }
+.tech-js { background: #f7df1e; }
+.tech-react { background: #61dafb; font-size: 26px; }
+.tech-node { background: #339933; color: #fff; }
+.tech-wp { background: #21759b; color: #fff; }
+.tech-supabase { background: #3ecf8e; }
+
+/* ---------- testimonials ---------- */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.testimonial-quote {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.testimonial-quote::before {
+  content: "“";
+  color: var(--accent);
+  font-size: 28px;
+  line-height: 0;
+  display: inline-block;
+  vertical-align: -6px;
+  margin-right: 2px;
+}
+
+.testimonial-name {
+  margin: 0;
+  font-family: var(--font-head);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.testimonial-company {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  color: var(--text-faint);
 }
 
 /* ---------- why us ---------- */
