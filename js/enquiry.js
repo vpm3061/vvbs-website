@@ -46,6 +46,10 @@ form.addEventListener("submit", async (e) => {
     statusBox.className = "form-status success";
     statusBox.hidden = false;
 
+    if (typeof gtag === "function") {
+      gtag("event", "conversion", { send_to: "AW-18313157343" });
+    }
+
     const whatsappMessage = `Hi Black Bug, mera naam ${name} hai, mujhe ${projectType} ke liye enquiry karni hai, budget around ${budgetRange}`;
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
