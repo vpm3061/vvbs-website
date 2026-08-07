@@ -1,394 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18313157343"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18313157343');
-</script>
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
+  <!-- Google Ads conversion tracking is retained from the original site. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18313157343"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18313157343');
+    function gtag_report_conversion(url) {
+      gtag('event', 'conversion', {send_to: 'AW-18313157343/1sJqCIrEic4cEN-1spxE', value: 1.0, currency: 'INR', event_callback: function(){ if (url) window.location = url; }});
+      return false;
     }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18313157343/1sJqCIrEic4cEN-1spxE',
-      'value': 1.0,
-      'currency': 'INR',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Black Bug — iOS, Android, Web Apps &amp; Websites</title>
-<meta name="description" content="Black Bug builds iOS, Android, Web Apps and Websites — static and dynamic. Fast delivery, direct communication, affordable custom solutions." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css" />
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VVBSDigital is a premium digital marketing agency helping businesses, public leaders and public figures grow online.">
+  <meta name="theme-color" content="#0b0d12">
+  <title>VVBSDigital | Digital Marketing Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<div class="cursor-glow" id="cursor-glow"></div>
-
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="#top" class="logo">Black<span>Bug</span></a>
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#why-us">Why Us</a>
-      <a href="#enquiry" class="nav-cta">Get Quote</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero" id="top">
-  <div class="hero-content">
-    <p class="hero-eyebrow" data-animate>Software &amp; Web Development Studio</p>
-    <h1 class="hero-title" data-animate>Black<span>Bug</span></h1>
-    <p class="hero-tagline" id="typing-tagline" aria-live="polite"></p>
-    <div class="hero-actions" data-animate>
-      <a href="https://wa.me/919717233972?text=Hi%20Black%20Bug%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services" target="_blank" rel="noopener" class="btn btn-primary">Chat on WhatsApp</a>
-      <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
-    </div>
-  </div>
-  <div class="scroll-cue" aria-hidden="true"><span></span></div>
-</header>
-
-<section class="stats" data-animate>
-  <div class="stats-inner">
-    <div class="stat">
-      <span class="stat-number" data-target="6">0</span>
-      <p>Projects Delivered</p>
-    </div>
-    <div class="stat">
-      <span class="stat-number" data-target="2">0</span>
-      <p>Years Experience</p>
-    </div>
-    <div class="stat">
-      <span class="stat-number" data-target="5">0</span>
-      <p>Happy Clients</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="services">
-  <div class="section-inner">
-    <p class="section-eyebrow" data-animate>Services</p>
-    <h2 class="section-title" data-animate>Transparent starting prices</h2>
-
-    <div class="pricing-grid">
-      <div class="pricing-card" data-animate data-project="Static Website">
-        <h3>Static Website</h3>
-        <p class="price">₹6,000<span>starting</span></p>
-        <ul>
-          <li>Landing / brochure site</li>
-          <li>Mobile responsive</li>
-          <li>Up to 5 pages</li>
-        </ul>
-        <button class="btn btn-outline btn-quote" data-project="Static Website">Get Custom Quote</button>
-      </div>
-
-      <div class="pricing-card" data-animate data-project="Dynamic Website">
-        <h3>Dynamic Website</h3>
-        <p class="price">₹18,000<span>starting</span></p>
-        <ul>
-          <li>CMS / database driven</li>
-          <li>Admin panel</li>
-          <li>Forms &amp; integrations</li>
-        </ul>
-        <button class="btn btn-outline btn-quote" data-project="Dynamic Website">Get Custom Quote</button>
-      </div>
-
-      <div class="pricing-card" data-animate data-project="Web App">
-        <h3>Web App</h3>
-        <p class="price">₹30,000<span>starting</span></p>
-        <ul>
-          <li>Custom business logic</li>
-          <li>User accounts &amp; dashboards</li>
-          <li>API integrations</li>
-        </ul>
-        <button class="btn btn-outline btn-quote" data-project="Web App">Get Custom Quote</button>
-      </div>
-
-      <div class="pricing-card" data-animate data-project="Android App">
-        <h3>Android App</h3>
-        <p class="price">₹35,000<span>starting</span></p>
-        <ul>
-          <li>Native / cross-platform</li>
-          <li>Play Store ready</li>
-          <li>Backend integration</li>
-        </ul>
-        <button class="btn btn-outline btn-quote" data-project="Android App">Get Custom Quote</button>
-      </div>
-
-      <div class="pricing-card" data-animate data-project="iOS App">
-        <h3>iOS App</h3>
-        <p class="price">₹45,000<span>starting</span></p>
-        <ul>
-          <li>Native / cross-platform</li>
-          <li>App Store ready</li>
-          <li>Backend integration</li>
-        </ul>
-        <button class="btn btn-outline btn-quote" data-project="iOS App">Get Custom Quote</button>
-      </div>
-
-      <div class="pricing-card pricing-card-highlight" data-animate data-project="iOS + Android Combo">
-        <p class="badge">Best Value</p>
-        <h3>iOS + Android Combo</h3>
-        <p class="price">₹70,000<span>starting</span></p>
-        <ul>
-          <li>Both platforms, one codebase</li>
-          <li>Shared backend</li>
-          <li>Store submission support</li>
-        </ul>
-        <button class="btn btn-primary btn-quote" data-project="iOS + Android Combo">Get Custom Quote</button>
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+  <nav class="navbar" id="navbar" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a href="#top" class="logo" aria-label="VVBSDigital home">VVBS<span>Digital</span></a>
+      <div class="nav-links">
+        <a href="#services">Services</a><a href="#work">Work</a><a href="#industries">Industries</a><a href="#process">Process</a>
+        <a href="#enquiry" class="nav-cta">Get Proposal</a>
       </div>
     </div>
+  </nav>
 
-    <p class="pricing-disclaimer" data-animate>
-      The rates listed above are for basic/starter projects. Final pricing depends on your
-      exact requirements (features, design complexity, third-party integrations, timeline).
-      Fill out the enquiry form — we'll review your details and get back to you with an
-      accurate quote, along with a completely free consultation.
-    </p>
-  </div>
-</section>
-
-<section class="section section-alt" id="tech-stack">
-  <div class="section-inner">
-    <p class="section-eyebrow" data-animate>Tech Stack</p>
-    <h2 class="section-title" data-animate>Tools we build with</h2>
-
-    <div class="tech-grid">
-      <div class="tech-badge" data-animate>
-        <span class="tech-icon tech-html">&lt;/&gt;</span>
-        <p>HTML5</p>
+  <header class="hero" id="top">
+    <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+    <div class="hero-content">
+      <p class="eyebrow" data-animate>Digital Marketing Agency · India</p>
+      <h1 data-animate>Grow your <em>business</em><br>online.</h1>
+      <p class="hero-tagline" id="typing-tagline" aria-live="polite"></p>
+      <div class="hero-actions" data-animate>
+        <a href="#enquiry" class="btn btn-primary">Book Free Consultation <span>→</span></a>
+        <a href="https://wa.me/919717233972?text=Hi%20VVBSDigital%2C%20I%20would%20like%20to%20discuss%20my%20digital%20growth." target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp Us</a>
       </div>
-      <div class="tech-badge" data-animate>
-        <span class="tech-icon tech-css">#</span>
-        <p>CSS3</p>
-      </div>
-      <div class="tech-badge" data-animate>
-        <span class="tech-icon tech-js">JS</span>
-        <p>JavaScript</p>
-      </div>
-      <div class="tech-badge" data-animate>
-        <span class="tech-icon tech-react">⚛</span>
-        <p>React</p>
-      </div>
-      <div class="tech-badge" data-animate>
-        <span class="tech-icon tech-node">N</span>
-        <p>Node.js</p>
-      </div>
-      <div class="tech-badge" data-animate>
-        <span class="tech-icon tech-wp">W</span>
-        <p>WordPress</p>
-      </div>
-      <div class="tech-badge" data-animate>
-        <span class="tech-icon tech-supabase">S</span>
-        <p>Supabase</p>
-      </div>
+      <div class="trust-line" data-animate><span></span> Strategy-led marketing for ambitious brands & leaders <span></span></div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section class="section" id="portfolio">
-  <div class="section-inner">
-    <p class="section-eyebrow" data-animate>Portfolio</p>
-    <h2 class="section-title" data-animate>Work we're proud of</h2>
-
-    <div class="portfolio-grid">
-      <a class="portfolio-card tilt-card" data-animate href="https://gigway.in" target="_blank" rel="noopener">
-        <div class="portfolio-thumb thumb-1"><span>gigway.in</span></div>
-        <div class="portfolio-info">
-          <h3>Gigway</h3>
-          <p>Web App</p>
-        </div>
-      </a>
-
-      <a class="portfolio-card tilt-card" data-animate href="https://orenzaa.com" target="_blank" rel="noopener">
-        <div class="portfolio-thumb thumb-2"><span>orenzaa.com</span></div>
-        <div class="portfolio-info">
-          <h3>Orenzaa</h3>
-          <p>Website</p>
-        </div>
-      </a>
-
-      <a class="portfolio-card tilt-card" data-animate href="https://leaderiq.in" target="_blank" rel="noopener">
-        <div class="portfolio-thumb thumb-3"><span>leaderiq.in</span></div>
-        <div class="portfolio-info">
-          <h3>LeaderIQ</h3>
-          <p>Web App</p>
-        </div>
-      </a>
-
-      <a class="portfolio-card tilt-card" data-animate href="https://vjenix.com" target="_blank" rel="noopener">
-        <div class="portfolio-thumb thumb-4"><span>vjenix.com</span></div>
-        <div class="portfolio-info">
-          <h3>Vjenix</h3>
-          <p>Website</p>
-        </div>
-      </a>
-
-      <div class="portfolio-card tilt-card" data-animate>
-        <div class="portfolio-thumb thumb-5"><span>Tapasya</span></div>
-        <div class="portfolio-info">
-          <h3>Tapasya App</h3>
-          <p>Mobile App</p>
-        </div>
-      </div>
-
-      <div class="portfolio-card tilt-card" data-animate>
-        <div class="portfolio-thumb thumb-6"><span>VVBS</span></div>
-        <div class="portfolio-info">
-          <h3>VVBS Digital</h3>
-          <p>Digital Media Website</p>
-        </div>
-      </div>
+  <section class="stats" aria-label="Agency highlights" data-animate>
+    <div class="stats-inner">
+      <div class="stat"><strong class="stat-number" data-target="6">0</strong><p>Projects Delivered</p></div>
+      <div class="stat"><strong class="stat-number" data-target="2">0</strong><p>Years of Experience</p></div>
+      <div class="stat"><strong class="stat-number" data-target="5">0</strong><p>Happy Clients</p></div>
+      <div class="stat"><strong>360°</strong><p>Growth Partner</p></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section section-alt" id="testimonials">
-  <div class="section-inner">
-    <p class="section-eyebrow" data-animate>Testimonials</p>
-    <h2 class="section-title" data-animate>What clients say</h2>
-
-    <div class="testimonial-grid">
-      <div class="testimonial-card" data-animate>
-        <p class="testimonial-quote">"Great communication throughout the project and delivered exactly what we needed, on time."</p>
-        <div class="testimonial-author">
-          <p class="testimonial-name">Janak</p>
-          <p class="testimonial-company">gigway.in</p>
+  <main>
+    <section class="section" id="services">
+      <div class="section-inner">
+        <p class="eyebrow" data-animate>What we do</p>
+        <div class="title-row" data-animate><h2>Everything your brand needs to <em>lead online.</em></h2><p>Strategic creative, media and technology—under one accountable growth partner.</p></div>
+        <div class="service-grid">
+          <article class="service-card featured" data-animate data-project="Social Media Marketing"><div class="service-icon">↗</div><p class="service-kicker">Always-on presence</p><h3>Social Media Marketing</h3><p>Build a distinctive brand voice and a community that moves with you.</p><button class="text-link btn-quote" data-project="Social Media Marketing">Get proposal <span>→</span></button></article>
+          <article class="service-card" data-animate data-project="Performance Marketing"><div class="service-icon">◎</div><h3>Performance Marketing</h3><p>Data-led campaigns designed to turn attention into measurable demand.</p><button class="text-link btn-quote" data-project="Performance Marketing">Learn more <span>→</span></button></article>
+          <article class="service-card" data-animate data-project="Website Development"><div class="service-icon">⌘</div><h3>Website Development</h3><p>High-converting websites that make an exceptional first impression.</p><button class="text-link btn-quote" data-project="Website Development">Get proposal <span>→</span></button></article>
+          <article class="service-card" data-animate data-project="Branding & Graphic Design"><div class="service-icon">✦</div><h3>Branding & Design</h3><p>Identity systems and content that make your brand impossible to overlook.</p><button class="text-link btn-quote" data-project="Branding & Graphic Design">Learn more <span>→</span></button></article>
+          <article class="service-card" data-animate data-project="Google Ads"><div class="service-icon">◉</div><h3>Google Ads & SEO</h3><p>Own intent, earn visibility, and get discovered when it matters most.</p><button class="text-link btn-quote" data-project="Google Ads">Get proposal <span>→</span></button></article>
+          <article class="service-card" data-animate data-project="Creative Content"><div class="service-icon">▣</div><h3>Creative Content</h3><p>Video, photography and campaign content engineered to stop the scroll.</p><button class="text-link btn-quote" data-project="Creative Content">Learn more <span>→</span></button></article>
         </div>
+        <details class="services-more" data-animate><summary>Explore more capabilities <span>+</span></summary><div class="capability-list"><button class="btn-quote" data-project="Facebook & Instagram Ads">Facebook & Instagram Ads</button><button class="btn-quote" data-project="Video Editing">Video Editing</button><button class="btn-quote" data-project="Photography">Photography</button><button class="btn-quote" data-project="Influencer Marketing">Influencer Marketing</button><button class="btn-quote" data-project="AI Solutions">AI Solutions</button><button class="btn-quote" data-project="Web Applications">Web Applications</button><button class="btn-quote" data-project="Mobile Apps">Mobile Apps</button><button class="btn-quote" data-project="Business Automation">Business Automation</button></div></details>
       </div>
-      <div class="testimonial-card" data-animate>
-        <p class="testimonial-quote">"Professional work and quick turnaround. Would definitely work with them again."</p>
-        <div class="testimonial-author">
-          <p class="testimonial-name">Manjari</p>
-          <p class="testimonial-company">Founder, Tapasya App (JEE, NEET &amp; UPSC prep app)</p>
-        </div>
-      </div>
-      <div class="testimonial-card" data-animate>
-        <p class="testimonial-quote">"They understood our requirements quickly and built exactly what we had in mind."</p>
-        <div class="testimonial-author">
-          <p class="testimonial-name">Vijay Prakash Mishra</p>
-          <p class="testimonial-company">Founder, Orenzaa.com</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="section" id="why-us">
-  <div class="section-inner">
-    <p class="section-eyebrow" data-animate>Why Choose Us</p>
-    <h2 class="section-title" data-animate>Built for speed, trust and results</h2>
+    <section class="section dark-band" id="industries"><div class="section-inner"><p class="eyebrow" data-animate>Who we help</p><div class="title-row compact" data-animate><h2>Built for people with something <em>important to grow.</em></h2></div><div class="industry-grid" data-animate><span>Doctors & Hospitals</span><span>Schools & Education</span><span>Restaurants & Hotels</span><span>Builders & Real Estate</span><span>Lawyers & Consultants</span><span>Gyms & Wellness</span><span>Public Leaders</span><span>Creators & Influencers</span><span>Startups & Businesses</span></div></div></section>
 
-    <div class="why-grid">
-      <div class="why-card" data-animate>
-        <h3>Fast Delivery</h3>
-        <p>Most projects shipped in weeks, not months — without cutting corners.</p>
-      </div>
-      <div class="why-card" data-animate>
-        <h3>Direct Communication</h3>
-        <p>You talk straight to the person building your product. No middlemen.</p>
-      </div>
-      <div class="why-card" data-animate>
-        <h3>Affordable Pricing</h3>
-        <p>Transparent starting rates with no hidden costs or surprise add-ons.</p>
-      </div>
-      <div class="why-card" data-animate>
-        <h3>Custom Solutions</h3>
-        <p>Every build is tailored to your exact requirements — never a generic template.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="section" id="work"><div class="section-inner"><p class="eyebrow" data-animate>Selected work</p><div class="title-row" data-animate><h2>Built to be <em>remembered.</em></h2><p>Every engagement is designed around a singular idea: create growth that compounds.</p></div><div class="portfolio-grid">
+      <a class="portfolio-card tilt-card p-gigway" data-animate href="https://gigway.in" target="_blank" rel="noopener"><div class="portfolio-thumb"><span>G</span></div><div class="portfolio-info"><p>Web application</p><h3>Gigway <i>↗</i></h3></div></a>
+      <a class="portfolio-card tilt-card p-orenzaa" data-animate href="https://orenzaa.com" target="_blank" rel="noopener"><div class="portfolio-thumb"><span>O</span></div><div class="portfolio-info"><p>Website</p><h3>Orenzaa <i>↗</i></h3></div></a>
+      <a class="portfolio-card tilt-card p-leaderiq" data-animate href="https://leaderiq.in" target="_blank" rel="noopener"><div class="portfolio-thumb"><span>LQ</span></div><div class="portfolio-info"><p>Web application</p><h3>LeaderIQ <i>↗</i></h3></div></a>
+      <a class="portfolio-card tilt-card p-vjenix" data-animate href="https://vjenix.com" target="_blank" rel="noopener"><div class="portfolio-thumb"><span>V</span></div><div class="portfolio-info"><p>Website</p><h3>Vjenix <i>↗</i></h3></div></a>
+    </div></div></section>
 
-<section class="section" id="enquiry">
-  <div class="section-inner">
-    <p class="section-eyebrow" data-animate>Get In Touch</p>
-    <h2 class="section-title" data-animate>Tell us about your project</h2>
+    <section class="section section-alt" id="process"><div class="section-inner"><p class="eyebrow" data-animate>Our approach</p><div class="title-row compact" data-animate><h2>Clarity first. <em>Growth follows.</em></h2></div><ol class="process-list"><li data-animate><b>01</b><div><h3>Consultation</h3><p>We listen closely to understand where you are, where you want to go, and what matters.</p></div></li><li data-animate><b>02</b><div><h3>Strategy</h3><p>We turn insight into an ambitious, practical and measurable plan.</p></div></li><li data-animate><b>03</b><div><h3>Execution</h3><p>Our specialists bring the strategy to life with care, pace and precision.</p></div></li><li data-animate><b>04</b><div><h3>Optimization</h3><p>We learn, improve and focus investment on what drives the strongest results.</p></div></li></ol></div></section>
 
-    <div class="enquiry-card" data-animate>
-      <form id="enquiry-form" class="enquiry-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required autocomplete="name" />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" required autocomplete="tel" />
-          </div>
-        </div>
+    <section class="section" id="packages"><div class="section-inner"><p class="eyebrow" data-animate>Flexible engagement</p><div class="title-row compact" data-animate><h2>Find the right <em>growth gear.</em></h2></div><div class="package-grid"><article class="package-card" data-animate><p>Starter</p><h3>Establish your foundation.</h3><ul><li>Social media essentials</li><li>Content direction</li><li>Monthly performance review</li></ul><button class="text-link btn-quote" data-project="Starter Package">Request a proposal →</button></article><article class="package-card is-popular" data-animate><span>Most chosen</span><p>Growth</p><h3>Turn attention into momentum.</h3><ul><li>Organic social & content</li><li>Paid media management</li><li>Conversion reporting</li></ul><button class="btn btn-primary btn-quote" data-project="Growth Package">Get proposal →</button></article><article class="package-card" data-animate><p>Premium</p><h3>Build a category-leading brand.</h3><ul><li>Full-funnel marketing</li><li>Creative production</li><li>Strategy & leadership support</li></ul><button class="text-link btn-quote" data-project="Premium Package">Request a proposal →</button></article><article class="package-card" data-animate><p>Enterprise</p><h3>Built around your ambition.</h3><ul><li>Custom integrated team</li><li>Technology & automation</li><li>Dedicated growth roadmap</li></ul><button class="text-link btn-quote" data-project="Enterprise Package">Talk to us →</button></article></div></div></section>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="project_type">Project Type</label>
-            <select id="project_type" name="project_type" required>
-              <option value="" disabled selected>Select project type</option>
-              <option value="Static Website">Static Website</option>
-              <option value="Dynamic Website">Dynamic Website</option>
-              <option value="Web App">Web App</option>
-              <option value="Android App">Android App</option>
-              <option value="iOS App">iOS App</option>
-              <option value="iOS + Android Combo">iOS + Android Combo</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="budget_range">Budget Range</label>
-            <select id="budget_range" name="budget_range" required>
-              <option value="" disabled selected>Select budget range</option>
-              <option value="Under 10k">Under ₹10,000</option>
-              <option value="10k-50k">₹10,000 - ₹50,000</option>
-              <option value="50k-1L">₹50,000 - ₹1,00,000</option>
-              <option value="1L+">₹1,00,000+</option>
-            </select>
-          </div>
-        </div>
+    <section class="section dark-band"><div class="section-inner"><p class="eyebrow" data-animate>Client perspective</p><div class="testimonial-grid"><figure class="testimonial-card" data-animate><blockquote>“Great communication throughout the project and delivered exactly what we needed, on time.”</blockquote><figcaption><strong>Janak</strong><span>gigway.in</span></figcaption></figure><figure class="testimonial-card" data-animate><blockquote>“Professional work and quick turnaround. Would definitely work with them again.”</blockquote><figcaption><strong>Manjari</strong><span>Founder, Tapasya App</span></figcaption></figure><figure class="testimonial-card" data-animate><blockquote>“They understood our requirements quickly and built exactly what we had in mind.”</blockquote><figcaption><strong>Vijay Prakash Mishra</strong><span>Founder, Orenzaa.com</span></figcaption></figure></div></div></section>
 
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Tell us briefly what you need..."></textarea>
-        </div>
+    <section class="section faq-section" id="faq"><div class="section-inner narrow"><p class="eyebrow" data-animate>FAQ</p><h2 data-animate>Questions, <em>answered.</em></h2><div class="faq-list" data-animate><details><summary>What types of clients do you work with?<span>+</span></summary><p>We work with ambitious businesses, public leaders and public figures across India—from local service brands to national campaigns.</p></details><details><summary>Do you offer customised marketing plans?<span>+</span></summary><p>Yes. Every plan begins with your objective, audience, market and available opportunity. We do not sell one-size-fits-all campaigns.</p></details><details><summary>Can I start with one service?<span>+</span></summary><p>Absolutely. We can begin with the service that creates the greatest immediate value, then build a more integrated programme when the time is right.</p></details><details><summary>How soon can we get started?<span>+</span></summary><p>After an initial consultation and proposal approval, we align on the first 30-day plan and start onboarding promptly.</p></details></div></div></section>
 
-        <button type="submit" id="submit-btn" class="btn btn-primary btn-block">Submit Enquiry</button>
-      </form>
-
-      <div id="form-status" class="form-status" hidden></div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">Black<span>Bug</span></div>
-    <div class="footer-details">
-      <p>tellitorg1@gmail.com</p>
-      <p>New Delhi, India</p>
-      <a href="https://wa.me/919717233972" target="_blank" rel="noopener">+91 97172 33972</a>
-    </div>
-    <p class="footer-copy">&copy; <span id="year"></span> Black Bug. All rights reserved.</p>
-  </div>
-</footer>
-
-<a class="whatsapp-float" href="https://wa.me/919717233972?text=Hi%20Black%20Bug%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 32 32" fill="currentColor" width="28" height="28"><path d="M16.004 3C9.376 3 4 8.373 4 15c0 2.386.696 4.61 1.897 6.478L4 29l7.72-1.86A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3zm0 21.75c-1.98 0-3.83-.55-5.41-1.5l-.388-.23-4.583 1.104 1.127-4.46-.253-.398A9.71 9.71 0 0 1 5.25 15c0-5.93 4.824-10.75 10.754-10.75S26.75 9.07 26.75 15 21.934 24.75 16.004 24.75zm5.98-8.146c-.328-.164-1.94-.957-2.24-1.066-.3-.11-.518-.164-.737.164-.218.328-.847 1.066-1.038 1.285-.19.218-.382.246-.71.082-.328-.164-1.386-.51-2.64-1.628-.976-.87-1.635-1.945-1.826-2.273-.19-.328-.02-.505.144-.668.148-.147.328-.383.492-.574.164-.19.218-.328.328-.546.11-.218.055-.41-.028-.574-.082-.164-.737-1.775-1.01-2.43-.266-.64-.535-.554-.737-.564l-.628-.011c-.218 0-.573.082-.874.41-.3.328-1.147 1.12-1.147 2.73s1.174 3.166 1.338 3.385c.164.218 2.31 3.527 5.598 4.945.782.338 1.393.54 1.87.69.786.25 1.5.215 2.064.13.63-.094 1.94-.793 2.213-1.558.273-.766.273-1.42.19-1.558-.082-.137-.3-.218-.628-.383z"/></svg>
-</a>
-
-<script src="js/main.js"></script>
-<script src="js/enquiry.js"></script>
+    <section class="section contact-section" id="enquiry"><div class="section-inner contact-layout"><div data-animate><p class="eyebrow">Let’s start a conversation</p><h2>Ready to make your next move <em>matter?</em></h2><p class="contact-copy">Tell us where you want to go. We’ll help you find the most effective way there.</p><a href="tel:+919717233972" class="contact-number">+91 97172 33972 <span>↗</span></a></div><div class="enquiry-card" data-animate><form id="enquiry-form" class="enquiry-form" novalidate><div class="form-row"><div class="form-group"><label for="name">Name *</label><input id="name" name="name" autocomplete="name" required></div><div class="form-group"><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div></div><div class="form-row"><div class="form-group"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required></div><div class="form-group"><label for="business_name">Business / Organisation</label><input id="business_name" name="business_name" autocomplete="organization"></div></div><div class="form-row"><div class="form-group"><label for="project_type">Service *</label><select id="project_type" name="project_type" required><option value="">Select a service</option><option>Website Development</option><option>Social Media Marketing</option><option>Performance Marketing</option><option>Google Ads</option><option>Facebook & Instagram Ads</option><option>SEO</option><option>Branding & Graphic Design</option><option>Creative Content</option><option>AI Solutions</option><option>Web Applications</option><option>Mobile Apps</option><option>Business Automation</option><option>Other</option></select></div><div class="form-group"><label for="budget_range">Monthly budget *</label><select id="budget_range" name="budget_range" required><option value="">Select range</option><option value="Under ₹25,000">Under ₹25,000</option><option value="₹25,000 – ₹50,000">₹25,000 – ₹50,000</option><option value="₹50,000 – ₹1,00,000">₹50,000 – ₹1,00,000</option><option value="₹1,00,000+">₹1,00,000+</option></select></div></div><div class="form-group"><label for="message">How can we help?</label><textarea id="message" name="message" rows="3" placeholder="Tell us about your goals."></textarea></div><button type="submit" id="submit-btn" class="btn btn-primary btn-block">Request Free Consultation <span>→</span></button><p class="form-note">Your details stay private. We’ll contact you shortly.</p></form><div id="form-status" class="form-status" hidden role="status"></div></div></div></section>
+  </main>
+  <footer class="footer"><div class="footer-inner"><a href="#top" class="logo">VVBS<span>Digital</span></a><p>Digital marketing, creative and technology for growth-minded people.</p><div><a href="mailto:tellitorg1@gmail.com">tellitorg1@gmail.com</a><a href="https://wa.me/919717233972" target="_blank" rel="noopener">WhatsApp</a><a href="tel:+919717233972">+91 97172 33972</a></div><small>© <span id="year"></span> VVBSDigital. All rights reserved.</small></div></footer>
+  <a class="whatsapp-float" href="https://wa.me/919717233972?text=Hi%20VVBSDigital%2C%20I%20would%20like%20to%20discuss%20my%20digital%20growth." target="_blank" rel="noopener" aria-label="Chat with VVBSDigital on WhatsApp">☏</a>
+  <script src="js/main.js"></script><script src="js/enquiry.js"></script>
 </body>
 </html>
