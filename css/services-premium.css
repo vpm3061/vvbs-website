@@ -1,0 +1,25 @@
+.services-premium { background: #0B0B0F; padding: 140px 0; position: relative; z-index: 1; }
+.services-premium-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(30px, 4vw, 58px); align-items: center; }
+.services-copy h2 { font: 800 clamp(42px, 5vw, 66px)/1.08 var(--head); letter-spacing: -3px; margin: 0; }
+.services-copy h2 em { color: var(--gold-light); font-style: normal; }
+.services-intro { max-width: 620px; color: var(--muted); font-size: 17px; line-height: 1.65; margin: 22px 0 38px; }
+.services-premium-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.premium-service { min-height: 132px; display: flex; gap: 11px; padding: 15px; border: 1px solid rgba(240,198,110,.14); border-radius: 14px; background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.018)); transition: transform .25s ease, border-color .25s ease, background .25s ease; }
+.premium-service:hover { transform: translateY(-5px); border-color: rgba(240,198,110,.58); background: rgba(240,198,110,.07); }
+.premium-service svg { flex: 0 0 25px; width: 25px; height: 25px; margin-top: 2px; fill: none; stroke: var(--gold-light); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.premium-service h3 { margin: 0 0 6px; font: 700 14px/1.25 var(--head); letter-spacing: -.3px; }
+.premium-service p { color: var(--muted); font-size: 11px; line-height: 1.4; margin: 0; }
+.premium-service a { display: inline-block; margin-top: 10px; color: var(--gold-light); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; }
+.premium-service a span { padding-left: 3px; transition: padding .2s ease; }
+.premium-service a:hover span { padding-left: 7px; }
+.premium-service[data-animate] { transition: opacity .6s ease, transform .6s ease, border-color .25s ease, background .25s ease; }
+.premium-service:nth-child(2) { transition-delay: .04s; }.premium-service:nth-child(3) { transition-delay: .08s; }.premium-service:nth-child(4) { transition-delay: .08s; }.premium-service:nth-child(5) { transition-delay: .12s; }.premium-service:nth-child(6) { transition-delay: .12s; }.premium-service:nth-child(7) { transition-delay: .16s; }.premium-service:nth-child(8) { transition-delay: .16s; }.premium-service:nth-child(9) { transition-delay: .20s; }.premium-service:nth-child(10) { transition-delay: .20s; }.premium-service:nth-child(11) { transition-delay: .24s; }.premium-service:nth-child(12) { transition-delay: .24s; }
+.services-visual { margin: 0; align-self: center; overflow: hidden; border-radius: 24px; border: 1px solid rgba(255,255,255,.24); box-shadow: 0 28px 70px rgba(0,0,0,.45), inset 0 1px rgba(255,255,255,.15); background: #15110e; }
+.services-visual img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; object-position: center; transition: transform .5s ease; }
+.services-visual:hover img { transform: scale(1.02); }
+.services-visual[data-animate] { transform: translateX(34px); }.services-visual[data-animate].in-view { transform: translateX(0); }
+.legacy-services { display: none; }
+@media (max-width: 1020px) { .services-premium-layout { grid-template-columns: minmax(0, 1fr) minmax(320px, .78fr); gap: 32px; }.services-premium-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.premium-service { min-height: 128px; } }
+@media (max-width: 760px) { .services-premium { padding: 92px 0; }.services-premium-layout { grid-template-columns: 1fr; }.services-visual { grid-row: 1; }.services-copy { grid-row: 2; }.services-visual img { height: auto; max-height: none; object-position: center; }.services-intro { margin-bottom: 30px; }.services-premium-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.services-visual[data-animate] { transform: translateY(24px); }.services-visual[data-animate].in-view { transform: translateY(0); } }
+@media (max-width: 520px) { .services-premium { padding: 74px 0; }.services-copy h2 { letter-spacing: -2px; }.services-intro { font-size: 15px; }.services-premium-grid { grid-template-columns: 1fr; }.premium-service { min-height: 122px; }.services-visual { border-radius: 18px; } }
+@media (prefers-reduced-motion: reduce) { .premium-service, .services-visual img { transition: none; }.services-visual:hover img { transform: none; } }

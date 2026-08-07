@@ -22,6 +22,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/hero-background.css">
+  <link rel="stylesheet" href="css/services-premium.css">
+  <link rel="stylesheet" href="css/about-premium.css">
+  <link rel="stylesheet" href="css/contact-premium.css">
+  <link rel="stylesheet" href="css/client-marquee.css">
 </head>
 <body>
   <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
@@ -29,15 +34,17 @@
     <div class="nav-inner">
       <a href="#top" class="logo" aria-label="VVBSDigital home">VVBS<span>Digital</span></a>
       <div class="nav-links">
-        <a href="#services">Services</a><a href="#work">Work</a><a href="#industries">Industries</a><a href="#process">Process</a>
+        <a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#industries">Industries</a><a href="#process">Process</a>
         <a href="#enquiry" class="nav-cta">Get Proposal</a>
       </div>
     </div>
   </nav>
 
-  <header class="hero" id="top">
+  <header class="hero hero-with-image" id="top">
+    <div class="hero-media" aria-hidden="true"><img src="assets/vvbs-hero-background.png" alt=""></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
-    <div class="hero-content">
+    <div class="hero-content hero-content-left">
       <p class="eyebrow" data-animate>Digital Marketing Agency · India</p>
       <h1 data-animate>Grow your <em>business</em><br>online.</h1>
       <p class="hero-tagline" id="typing-tagline" aria-live="polite"></p>
@@ -46,6 +53,11 @@
         <a href="https://wa.me/919717233972?text=Hi%20VVBSDigital%2C%20I%20would%20like%20to%20discuss%20my%20digital%20growth." target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp Us</a>
       </div>
       <div class="trust-line" data-animate><span></span> Strategy-led marketing for ambitious brands & leaders <span></span></div>
+      <div class="hero-metrics" aria-label="Agency highlights" data-animate>
+        <div><strong class="stat-number" data-target="6">0</strong><span>Projects delivered</span></div>
+        <div><strong class="stat-number" data-target="2">0</strong><span>Years of experience</span></div>
+        <div><strong class="stat-number" data-target="5">0</strong><span>Happy clients</span></div>
+      </div>
     </div>
   </header>
 
@@ -59,7 +71,76 @@
   </section>
 
   <main>
-    <section class="section" id="services">
+    <section class="about-premium" id="about">
+      <div class="section-inner about-premium-layout">
+        <figure class="about-visual" data-animate>
+          <img src="assets/vvbs-about-team.png" alt="VVBSDigital team in a collaborative strategy and planning session" loading="lazy" decoding="async">
+        </figure>
+        <div class="about-copy">
+          <p class="eyebrow" data-animate>About VVBSDigital</p>
+          <h2 data-animate>Your Digital <em>Growth Partner</em></h2>
+          <p class="about-description" data-animate>VVBSDigital is a modern Digital Marketing Agency helping Businesses, Public Leaders and Creators grow through Digital Marketing, Branding, Websites, Performance Marketing, Creative Content and Technology Solutions.</p>
+          <ul class="about-highlights" data-animate>
+            <li>Experienced Digital Team</li><li>Creative Strategy &amp; Execution</li><li>Business Focused Solutions</li><li>Transparent Communication</li><li>Fast Project Delivery</li><li>Long-Term Growth Partnership</li>
+          </ul>
+          <div class="about-stats" aria-label="VVBSDigital statistics" data-animate>
+            <div><strong class="stat-number" data-target="100">0</strong><span>Projects Delivered</span></div>
+            <div><strong class="stat-number" data-target="50">0</strong><span>Happy Clients</span></div>
+            <div><strong class="stat-number" data-target="5">0</strong><span>Years Combined Experience</span></div>
+          </div>
+          <a class="btn btn-primary about-cta" href="#enquiry">Let's Work Together <span>&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="client-marquee-section" aria-label="Our clients">
+      <div class="section-inner client-marquee-heading" data-animate><p class="eyebrow">Trusted by growing brands</p><h2>Partners we are proud to <em>grow with.</em></h2></div>
+      <div class="client-marquee" data-animate>
+        <div class="client-marquee-track">
+          <div class="client-marquee-set">
+            <article class="client-logo-card"><img src="assets/client-gigway.png" alt="Gigway"><span>Work. Earn. Grow.</span></article>
+            <article class="client-logo-card"><strong>LeaderIQ</strong><span>Web Application</span></article>
+            <article class="client-logo-card"><img src="assets/client-vjenix.png" alt="Vjenix"><span>Futuristic Technologies</span></article>
+            <article class="client-logo-card client-logo-light"><img src="assets/client-orenzaa.png" alt="Orenzaa"><span>Website</span></article>
+            <article class="client-logo-card client-logo-light client-tapasya"><img src="assets/client-tapasya.png" alt="Tapasya App"><div><strong>Tapasya App</strong><span>NEET, IIT-JEE &amp; UPSC preparation tracker</span></div></article>
+          </div>
+          <div class="client-marquee-set" aria-hidden="true">
+            <article class="client-logo-card"><img src="assets/client-gigway.png" alt=""><span>Work. Earn. Grow.</span></article>
+            <article class="client-logo-card"><strong>LeaderIQ</strong><span>Web Application</span></article>
+            <article class="client-logo-card"><img src="assets/client-vjenix.png" alt=""><span>Futuristic Technologies</span></article>
+            <article class="client-logo-card client-logo-light"><img src="assets/client-orenzaa.png" alt=""><span>Website</span></article>
+            <article class="client-logo-card client-logo-light client-tapasya"><img src="assets/client-tapasya.png" alt=""><div><strong>Tapasya App</strong><span>NEET, IIT-JEE &amp; UPSC preparation tracker</span></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-premium" id="services">
+      <div class="section-inner services-premium-layout">
+        <div class="services-copy">
+          <p class="eyebrow" data-animate>What we do</p>
+          <h2 data-animate>Our <em>Services</em></h2>
+          <p class="services-intro" data-animate>Complete Digital Marketing &amp; Technology Solutions for Businesses, Public Leaders and Creators.</p>
+          <div class="services-premium-grid">
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v12H4zM8 19h8M12 17v2"/></svg><div><h3>Website Development</h3><p>High-converting websites that build trust.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9m7 10V5m7 14v-7M3 19h18"/></svg><div><h3>Social Media Marketing</h3><p>Content and community built for growth.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16 5-5 4 3 7-8M15 6h5v5"/></svg><div><h3>Performance Marketing</h3><p>Measured campaigns that create demand.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="m17.5 6.5 2-2"/></svg><div><h3>Google Ads</h3><p>Capture intent when it matters most.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v10H8l-4 3zM8 10h8M8 13h5"/></svg><div><h3>Meta Ads</h3><p>Reach the right audiences at scale.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8.1 8 9 4.6-.9 8-4 8-9V7zM9 12l2 2 4-4"/></svg><div><h3>Branding</h3><p>Distinctive identities that stay memorable.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 16l3-3 2 2 3-4M8 9h.01"/></svg><div><h3>Graphic Design</h3><p>Design systems made to get noticed.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg><div><h3>Video Editing</h3><p>Scroll-stopping stories with polish.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4M8 11h6M11 8v6"/></svg><div><h3>SEO</h3><p>Earn visibility that compounds over time.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3 20c.5-4 2.2-6 5-6s4.5 2 5 6M14 20c.2-2.2 1.2-3.8 3-4"/></svg><div><h3>Influencer Marketing</h3><p>Credible voices for stronger reach.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 12h6M12 9v6M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m-2 6h2m14-6h2m-2 6h2"/></svg><div><h3>AI Solutions</h3><p>Smarter experiences for faster teams.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7zM3 12h4m10 0h4M12 3v4m0 10v4"/><circle cx="12" cy="12" r="2"/></svg><div><h3>Business Automation</h3><p>Workflows that save time and scale.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
+          </div>
+        </div>
+        <figure class="services-visual" data-animate><img src="assets/vvbs-services-visual.png" alt="Digital marketing analytics dashboard displayed on a laptop and phone" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+
+    <section class="section legacy-services" aria-hidden="true">
       <div class="section-inner">
         <p class="eyebrow" data-animate>What we do</p>
         <div class="title-row" data-animate><h2>Everything your brand needs to <em>lead online.</em></h2><p>Strategic creative, media and technology—under one accountable growth partner.</p></div>
@@ -96,6 +177,6 @@
   </main>
   <footer class="footer"><div class="footer-inner"><a href="#top" class="logo">VVBS<span>Digital</span></a><p>Digital marketing, creative and technology for growth-minded people.</p><div><a href="mailto:tellitorg1@gmail.com">tellitorg1@gmail.com</a><a href="https://wa.me/919717233972" target="_blank" rel="noopener">WhatsApp</a><a href="tel:+919717233972">+91 97172 33972</a></div><small>© <span id="year"></span> VVBSDigital. All rights reserved.</small></div></footer>
   <a class="whatsapp-float" href="https://wa.me/919717233972?text=Hi%20VVBSDigital%2C%20I%20would%20like%20to%20discuss%20my%20digital%20growth." target="_blank" rel="noopener" aria-label="Chat with VVBSDigital on WhatsApp">☏</a>
-  <script src="js/main.js"></script><script src="js/enquiry.js"></script>
+  <script src="js/main.js"></script><script src="js/hero-parallax.js"></script><script src="js/enquiry.js"></script><script src="js/contact-premium.js"></script>
 </body>
 </html>
