@@ -19,3 +19,41 @@
 @media (max-width: 800px) { .hero.hero-with-image { min-height: 92vh; } .hero-content-left { margin-left: 24px; } .hero-media img { object-position: 59% center; } .hero-overlay { background: linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.42)); } }
 @media (max-width: 560px) { .hero.hero-with-image { min-height: 90vh; padding-top: 120px; padding-bottom: 64px; } .hero-content-left { margin-left: 20px; margin-right: 20px; } .hero-media img { object-position: 64% center; } .hero-overlay { background: linear-gradient(90deg,rgba(0,0,0,.66),rgba(0,0,0,.45)); } .hero-metrics { margin-top: 28px; } .hero-metrics > div { min-width: 0; flex: 1; padding: 0 12px; } .hero-metrics span { font-size: 10px; } }
 @media (prefers-reduced-motion: reduce) { .hero-media img { animation: none; transform: scale(1.04) !important; } }
+
+/* Selected work replaces unconfirmed numeric claims. */
+.hero-work-proof { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 30px; }
+.hero-work-proof p { flex-basis: 100%; margin: 0; color: var(--muted); font-size: 12px; }
+.hero-work-proof a { color: var(--gold-light); font-size: 14px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.hero-work-proof a:hover { border-color: var(--gold); }
+.hero-work-proof a:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
+
+/* One shared hero, with keyboard-accessible growth tracks. */
+.hero.hero-with-image { padding: 130px 32px 72px; }
+.hero-content-left { width: min(100%, 760px); margin-left: max(0px, calc((100vw - 1200px) / 2)); margin-right: 0; }
+.wing-selector { margin-bottom: 32px; }
+.wing-selector > p { margin: 0 0 11px; color: #d1d5dc; font-size: 12px; }
+.wing-tabs { display: inline-flex; gap: 5px; padding: 5px; max-width: 100%; border: 1px solid rgba(240,198,110,.35); border-radius: 16px; background: rgba(11,13,18,.88); }
+.wing-tabs button { min-height: 48px; border: 0; border-radius: 11px; padding: 12px 20px; background: transparent; color: #d1d5dc; cursor: pointer; font-size: 13px; font-weight: 700; line-height: 1.4; transition: background .2s, color .2s; }
+.wing-tabs button[aria-selected="true"] { background: var(--gold); color: #171107; }
+.wing-tabs button:hover:not([aria-selected="true"]) { background: rgba(255,255,255,.08); color: #fff; }
+.wing-tabs button:focus-visible, .wing-panel:focus-visible, .wing-panel a:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+.wing-panel { min-height: 470px; }
+.wing-panel[hidden] { display: none; }
+.wing-panel h1 { max-width: 760px; font-size: clamp(40px, 5.4vw, 68px); line-height: 1.08; letter-spacing: -.045em; }
+.wing-panel .eyebrow { line-height: 1.7; }
+.wing-panel .hero-tagline { max-width: 660px; margin-top: 22px; margin-bottom: 26px; color: #d1d5dc; font-size: clamp(16px, 1.6vw, 19px); }
+.hero-next-step { max-width: 640px; color: #b7bdc7; font-size: 12px; line-height: 1.6; margin: 14px 0 0; }
+#enquiry { scroll-margin-top: 90px; }
+@media (max-width: 560px) {
+  .hero.hero-with-image { padding: 110px 20px 48px; }
+  .hero-content-left { margin: 0; min-width: 0; }
+  .wing-selector { margin-bottom: 26px; }
+  .wing-tabs { display: flex; width: 100%; }
+  .wing-tabs button { flex: 1; padding: 10px 8px; font-size: 12px; }
+  .wing-panel { min-height: 510px; }
+  .wing-panel h1 { font-size: clamp(36px, 9vw, 48px); }
+  .wing-panel .hero-actions { gap: 10px; }
+  .wing-panel .hero-actions .btn { width: 100%; padding: 14px 12px; }
+  .hero-work-proof { gap: 8px 18px; margin-top: 24px; }
+}
+@media (prefers-reduced-motion: reduce) { .wing-tabs button { transition: none; } }

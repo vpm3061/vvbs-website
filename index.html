@@ -9,7 +9,13 @@
     gtag('js', new Date());
     gtag('config', 'AW-18313157343');
     function gtag_report_conversion(url) {
-      gtag('event', 'conversion', {send_to: 'AW-18313157343/1sJqCIrEic4cEN-1spxE', value: 1.0, currency: 'INR', event_callback: function(){ if (url) window.location = url; }});
+      let redirected = false;
+      const continueToContact = function() {
+        if (url && !redirected) { redirected = true; window.location.assign(url); }
+      };
+      // Keep the contact journey working when analytics is blocked or slow.
+      if (url) setTimeout(continueToContact, 1500);
+      gtag('event', 'conversion', {send_to: 'AW-18313157343/1sJqCIrEic4cEN-1spxE', value: 1.0, currency: 'INR', event_callback: continueToContact});
       return false;
     }
   </script>
@@ -27,14 +33,18 @@
   <link rel="stylesheet" href="css/about-premium.css">
   <link rel="stylesheet" href="css/contact-premium.css">
   <link rel="stylesheet" href="css/client-marquee.css">
+  <link rel="stylesheet" href="css/pricing.css">
+  <link rel="stylesheet" href="css/comparison.css">
+  <link rel="stylesheet" href="css/navigation.css">
 </head>
 <body>
   <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
   <nav class="navbar" id="navbar" aria-label="Primary navigation">
     <div class="nav-inner">
       <a href="#top" class="logo" aria-label="VVBSDigital home">VVBS<span>Digital</span></a>
-      <div class="nav-links">
-        <a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#industries">Industries</a><a href="#process">Process</a>
+      <button class="nav-toggle" type="button" aria-controls="primary-links" aria-expanded="false">Menu <span aria-hidden="true">&#9776;</span></button>
+      <div class="nav-links" id="primary-links">
+        <a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#industries">Industries</a><a href="#process">Process</a><a href="#packages">Pricing</a>
         <a href="#enquiry" class="nav-cta">Get Proposal</a>
       </div>
     </div>
@@ -45,32 +55,47 @@
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
     <div class="hero-content hero-content-left">
-      <p class="eyebrow" data-animate>Digital Marketing Agency · India</p>
-      <h1 data-animate>Grow your <em>business</em><br>online.</h1>
-      <p class="hero-tagline" id="typing-tagline" aria-live="polite"></p>
-      <div class="hero-actions" data-animate>
-        <a href="#enquiry" class="btn btn-primary">Book Free Consultation <span>→</span></a>
-        <a href="https://wa.me/919717233972?text=Hi%20VVBSDigital%2C%20I%20would%20like%20to%20discuss%20my%20digital%20growth." target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp Us</a>
+      <div class="wing-selector">
+        <p id="wing-label">Choose your growth track</p>
+        <div class="wing-tabs" role="tablist" aria-labelledby="wing-label">
+          <button type="button" id="tab-business" role="tab" aria-selected="true" aria-controls="hero-business" tabindex="0" data-wing="business">Business Growth</button>
+          <button type="button" id="tab-political" role="tab" aria-selected="false" aria-controls="hero-political" tabindex="-1" data-wing="political">Political PR &amp; War Room</button>
+        </div>
       </div>
-      <div class="trust-line" data-animate><span></span> Strategy-led marketing for ambitious brands & leaders <span></span></div>
-      <div class="hero-metrics" aria-label="Agency highlights" data-animate>
-        <div><strong class="stat-number" data-target="6">0</strong><span>Projects delivered</span></div>
-        <div><strong class="stat-number" data-target="2">0</strong><span>Years of experience</span></div>
-        <div><strong class="stat-number" data-target="5">0</strong><span>Happy clients</span></div>
+      <div class="wing-panel" id="hero-business" role="tabpanel" aria-labelledby="tab-business" tabindex="0">
+        <p class="eyebrow">Websites &middot; Ads &middot; Lead automation</p>
+        <h1>Turn more visitors into <em>business enquiries.</em></h1>
+        <p class="hero-tagline">Connect your website, Meta &amp; Google Ads, and lead follow-up in one clear system. Help potential customers find you, enquire easily, and hear back faster.</p>
+        <div class="hero-actions">
+          <a href="#enquiry" class="btn btn-primary" data-hero-project="Business Growth Plan">Get My Growth Plan <span aria-hidden="true">&rarr;</span></a>
+          <a href="https://wa.me/919717233972?text=Hi%20VVBS%20Digital%2C%20I%20would%20like%20to%20discuss%20business%20growth." target="_blank" rel="noopener" class="btn btn-secondary">Discuss on WhatsApp</a>
+        </div>
+        <p class="hero-next-step">Tell us your goals. We will discuss the scope and recommend a plan.</p>
+        <div class="hero-work-proof">
+          <p>Explore our selected work</p>
+          <a href="https://gigway.in" target="_blank" rel="noopener">Gigway &nearr;</a>
+          <a href="https://orenzaa.com" target="_blank" rel="noopener">Orenzaa &nearr;</a>
+          <a href="https://vjenix.com" target="_blank" rel="noopener">Vjenix &nearr;</a>
+        </div>
+      </div>
+      <div class="wing-panel" id="hero-political" role="tabpanel" aria-labelledby="tab-political" tabindex="0" hidden>
+        <p class="eyebrow">Campaign operations &middot; Content &middot; LeaderIQ</p>
+        <h1>Your campaign team. <em>Connected and coordinated.</em></h1>
+        <p class="hero-tagline">Bring campaign content, volunteer coordination and daily reporting into one organised workflow with VVBS Digital's campaign support and LeaderIQ.</p>
+        <div class="hero-actions">
+          <a href="#enquiry" class="btn btn-primary" data-hero-project="Political Campaign Proposal">Request Campaign Proposal <span aria-hidden="true">&rarr;</span></a>
+          <a href="#enquiry" class="btn btn-secondary" data-hero-project="LeaderIQ Demo">Request LeaderIQ Demo</a>
+        </div>
+        <p class="hero-next-step">Discuss your campaign needs, team setup and support requirements.</p>
+        <div class="hero-work-proof">
+          <p>Explore the platform</p>
+          <a href="https://leaderiq.in" target="_blank" rel="noopener">Explore LeaderIQ &nearr;</a>
+        </div>
       </div>
     </div>
   </header>
 
-  <section class="stats" aria-label="Agency highlights" data-animate>
-    <div class="stats-inner">
-      <div class="stat"><strong class="stat-number" data-target="6">0</strong><p>Projects Delivered</p></div>
-      <div class="stat"><strong class="stat-number" data-target="2">0</strong><p>Years of Experience</p></div>
-      <div class="stat"><strong class="stat-number" data-target="5">0</strong><p>Happy Clients</p></div>
-      <div class="stat"><strong>360°</strong><p>Growth Partner</p></div>
-    </div>
-  </section>
-
-  <main>
+<main>
     <section class="about-premium" id="about">
       <div class="section-inner about-premium-layout">
         <figure class="about-visual" data-animate>
@@ -83,11 +108,7 @@
           <ul class="about-highlights" data-animate>
             <li>Experienced Digital Team</li><li>Creative Strategy &amp; Execution</li><li>Business Focused Solutions</li><li>Transparent Communication</li><li>Fast Project Delivery</li><li>Long-Term Growth Partnership</li>
           </ul>
-          <div class="about-stats" aria-label="VVBSDigital statistics" data-animate>
-            <div><strong class="stat-number" data-target="100">0</strong><span>Projects Delivered</span></div>
-            <div><strong class="stat-number" data-target="50">0</strong><span>Happy Clients</span></div>
-            <div><strong class="stat-number" data-target="5">0</strong><span>Years Combined Experience</span></div>
-          </div>
+          <p class="about-work-link" data-animate><a href="#work">Explore our websites and applications <span aria-hidden="true">&rarr;</span></a></p>
           <a class="btn btn-primary about-cta" href="#enquiry">Let's Work Together <span>&rarr;</span></a>
         </div>
       </div>
@@ -116,47 +137,54 @@
     </section>
 
     <section class="services-premium" id="services">
-      <div class="section-inner services-premium-layout">
+      <div class="section-inner services-premium-layout" data-wing-content="business">
         <div class="services-copy">
-          <p class="eyebrow" data-animate>What we do</p>
-          <h2 data-animate>Our <em>Services</em></h2>
-          <p class="services-intro" data-animate>Complete Digital Marketing &amp; Technology Solutions for Businesses, Public Leaders and Creators.</p>
+          <p class="eyebrow" data-animate>Business growth services</p>
+          <h2 data-animate>From first click<br>to <em>follow-up.</em></h2>
+          <p class="services-intro" data-animate>Get discovered, build confidence and make enquiries easier. Choose the support you need across websites, advertising, content and automation.</p>
           <div class="services-premium-grid">
-            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v12H4zM8 19h8M12 17v2"/></svg><div><h3>Website Development</h3><p>High-converting websites that build trust.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
-            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9m7 10V5m7 14v-7M3 19h18"/></svg><div><h3>Social Media Marketing</h3><p>Content and community built for growth.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
-            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16 5-5 4 3 7-8M15 6h5v5"/></svg><div><h3>Performance Marketing</h3><p>Measured campaigns that create demand.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
-            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="m17.5 6.5 2-2"/></svg><div><h3>Google Ads</h3><p>Capture intent when it matters most.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
-            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v10H8l-4 3zM8 10h8M8 13h5"/></svg><div><h3>Meta Ads</h3><p>Reach the right audiences at scale.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
-            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8.1 8 9 4.6-.9 8-4 8-9V7zM9 12l2 2 4-4"/></svg><div><h3>Branding</h3><p>Distinctive identities that stay memorable.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
-            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 16l3-3 2 2 3-4M8 9h.01"/></svg><div><h3>Graphic Design</h3><p>Design systems made to get noticed.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
-            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg><div><h3>Video Editing</h3><p>Scroll-stopping stories with polish.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
-            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4M8 11h6M11 8v6"/></svg><div><h3>SEO</h3><p>Earn visibility that compounds over time.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
-            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3 20c.5-4 2.2-6 5-6s4.5 2 5 6M14 20c.2-2.2 1.2-3.8 3-4"/></svg><div><h3>Influencer Marketing</h3><p>Credible voices for stronger reach.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
-            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 12h6M12 9v6M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m-2 6h2m14-6h2m-2 6h2"/></svg><div><h3>AI Solutions</h3><p>Smarter experiences for faster teams.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
-            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7zM3 12h4m10 0h4M12 3v4m0 10v4"/><circle cx="12" cy="12" r="2"/></svg><div><h3>Business Automation</h3><p>Workflows that save time and scale.</p><a href="#enquiry">Learn More <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v12H4zM8 19h8M12 17v2"/></svg><div><h3>Website Development</h3><p>Fast websites and focused landing pages that make the next step clear.</p><a href="#enquiry" data-service-project="Website Development" aria-label="Discuss Website Development">Discuss service <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9m7 10V5m7 14v-7M3 19h18"/></svg><div><h3>Social Media Marketing</h3><p>Content and community built for growth.</p><a href="#enquiry" data-service-project="Social Media Marketing" aria-label="Discuss Social Media Marketing">Discuss service <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16 5-5 4 3 7-8M15 6h5v5"/></svg><div><h3>Performance Marketing</h3><p>Measured campaigns that create demand.</p><a href="#enquiry" data-service-project="Performance Marketing" aria-label="Discuss Performance Marketing">Discuss service <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="m17.5 6.5 2-2"/></svg><div><h3>Google Ads</h3><p>Capture intent when it matters most.</p><a href="#enquiry" data-service-project="Google Ads" aria-label="Discuss Google Ads">Discuss service <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v10H8l-4 3zM8 10h8M8 13h5"/></svg><div><h3>Meta Ads</h3><p>Reach the right audiences at scale.</p><a href="#enquiry" data-service-project="Facebook &amp; Instagram Ads" aria-label="Discuss Meta Ads">Discuss service <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8.1 8 9 4.6-.9 8-4 8-9V7zM9 12l2 2 4-4"/></svg><div><h3>Branding</h3><p>Distinctive identities that stay memorable.</p><a href="#enquiry" data-service-project="Branding &amp; Graphic Design" aria-label="Discuss Branding">Discuss service <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 16l3-3 2 2 3-4M8 9h.01"/></svg><div><h3>Graphic Design</h3><p>Design systems made to get noticed.</p><a href="#enquiry" data-service-project="Branding &amp; Graphic Design" aria-label="Discuss Graphic Design">Discuss service <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg><div><h3>Video Editing</h3><p>Scroll-stopping stories with polish.</p><a href="#enquiry" data-service-project="Video Editing" aria-label="Discuss Video Editing">Discuss service <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4M8 11h6M11 8v6"/></svg><div><h3>SEO</h3><p>Improve search visibility, including local search and Google Business Profile.</p><a href="#enquiry" data-service-project="SEO" aria-label="Discuss SEO">Discuss service <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3 20c.5-4 2.2-6 5-6s4.5 2 5 6M14 20c.2-2.2 1.2-3.8 3-4"/></svg><div><h3>Influencer Marketing</h3><p>Credible voices for stronger reach.</p><a href="#enquiry" data-service-project="Influencer Marketing" aria-label="Discuss Influencer Marketing">Discuss service <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 12h6M12 9v6M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m-2 6h2m14-6h2m-2 6h2"/></svg><div><h3>AI Solutions</h3><p>Smarter experiences for faster teams.</p><a href="#enquiry" data-service-project="AI Solutions" aria-label="Discuss AI Solutions">Discuss service <span>→</span></a></div></article>
+            <article class="premium-service" data-animate><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7zM3 12h4m10 0h4M12 3v4m0 10v4"/><circle cx="12" cy="12" r="2"/></svg><div><h3>Business Automation</h3><p>Connect your CRM and WhatsApp follow-up to keep enquiries organised.</p><a href="#enquiry" data-service-project="Business Automation" aria-label="Discuss Business Automation">Discuss service <span>→</span></a></div></article>
           </div>
         </div>
         <figure class="services-visual" data-animate><img src="assets/vvbs-services-visual.png" alt="Digital marketing analytics dashboard displayed on a laptop and phone" loading="lazy" decoding="async"></figure>
       </div>
-    </section>
-
-    <section class="section legacy-services" aria-hidden="true">
-      <div class="section-inner">
-        <p class="eyebrow" data-animate>What we do</p>
-        <div class="title-row" data-animate><h2>Everything your brand needs to <em>lead online.</em></h2><p>Strategic creative, media and technology—under one accountable growth partner.</p></div>
-        <div class="service-grid">
-          <article class="service-card featured" data-animate data-project="Social Media Marketing"><div class="service-icon">↗</div><p class="service-kicker">Always-on presence</p><h3>Social Media Marketing</h3><p>Build a distinctive brand voice and a community that moves with you.</p><button class="text-link btn-quote" data-project="Social Media Marketing">Get proposal <span>→</span></button></article>
-          <article class="service-card" data-animate data-project="Performance Marketing"><div class="service-icon">◎</div><h3>Performance Marketing</h3><p>Data-led campaigns designed to turn attention into measurable demand.</p><button class="text-link btn-quote" data-project="Performance Marketing">Learn more <span>→</span></button></article>
-          <article class="service-card" data-animate data-project="Website Development"><div class="service-icon">⌘</div><h3>Website Development</h3><p>High-converting websites that make an exceptional first impression.</p><button class="text-link btn-quote" data-project="Website Development">Get proposal <span>→</span></button></article>
-          <article class="service-card" data-animate data-project="Branding & Graphic Design"><div class="service-icon">✦</div><h3>Branding & Design</h3><p>Identity systems and content that make your brand impossible to overlook.</p><button class="text-link btn-quote" data-project="Branding & Graphic Design">Learn more <span>→</span></button></article>
-          <article class="service-card" data-animate data-project="Google Ads"><div class="service-icon">◉</div><h3>Google Ads & SEO</h3><p>Own intent, earn visibility, and get discovered when it matters most.</p><button class="text-link btn-quote" data-project="Google Ads">Get proposal <span>→</span></button></article>
-          <article class="service-card" data-animate data-project="Creative Content"><div class="service-icon">▣</div><h3>Creative Content</h3><p>Video, photography and campaign content engineered to stop the scroll.</p><button class="text-link btn-quote" data-project="Creative Content">Learn more <span>→</span></button></article>
+      <div class="section-inner services-premium-layout" data-wing-content="political" hidden>
+        <div class="services-copy">
+          <p class="eyebrow">Political PR &amp; war room services</p>
+          <h2>Keep campaign work<br><em>moving together.</em></h2>
+          <p class="services-intro">Practical support for your content desk, campaign operations and volunteer coordination. Agree the scope, responsibilities and delivery schedule before work begins.</p>
+          <div class="services-premium-grid">
+            <article class="premium-service"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 9h8M8 12h8M8 15h5"/></svg><div><h3>War Room Coordination</h3><p>Organise daily priorities, team responsibilities and campaign updates through a defined operating workflow.</p><a href="#enquiry" data-service-project="War Room Coordination" aria-label="Discuss War Room Coordination">Discuss service <span aria-hidden="true">&rarr;</span></a></div></article>
+            <article class="premium-service"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 9h8M8 12h8M8 15h5"/></svg><div><h3>LeaderIQ Setup &amp; Support</h3><p>Discuss platform setup, team onboarding and the features available for your campaign.</p><a href="#enquiry" data-service-project="LeaderIQ Setup &amp; Support" aria-label="Discuss LeaderIQ Setup &amp; Support">Discuss service <span aria-hidden="true">&rarr;</span></a></div></article>
+            <article class="premium-service"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 9h8M8 12h8M8 15h5"/></svg><div><h3>Event Reels &amp; Posters</h3><p>Turn event footage and approved updates into reels, posters and publishing-ready assets.</p><a href="#enquiry" data-service-project="Event Reels &amp; Posters" aria-label="Discuss Event Reels &amp; Posters">Discuss service <span aria-hidden="true">&rarr;</span></a></div></article>
+            <article class="premium-service"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 9h8M8 12h8M8 15h5"/></svg><div><h3>Volunteer Coordination</h3><p>Keep volunteer tasks, schedules and team communication organised.</p><a href="#enquiry" data-service-project="Volunteer Coordination" aria-label="Discuss Volunteer Coordination">Discuss service <span aria-hidden="true">&rarr;</span></a></div></article>
+            <article class="premium-service"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 9h8M8 12h8M8 15h5"/></svg><div><h3>Media Monitoring</h3><p>Track public coverage and bring relevant mentions together for your team to review.</p><a href="#enquiry" data-service-project="Media Monitoring" aria-label="Discuss Media Monitoring">Discuss service <span aria-hidden="true">&rarr;</span></a></div></article>
+            <article class="premium-service"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 9h8M8 12h8M8 15h5"/></svg><div><h3>Campaign Reporting</h3><p>Bring activity updates, content status and team feedback into clear daily reports.</p><a href="#enquiry" data-service-project="Campaign Reporting" aria-label="Discuss Campaign Reporting">Discuss service <span aria-hidden="true">&rarr;</span></a></div></article>
+          </div>
         </div>
-        <details class="services-more" data-animate><summary>Explore more capabilities <span>+</span></summary><div class="capability-list"><button class="btn-quote" data-project="Facebook & Instagram Ads">Facebook & Instagram Ads</button><button class="btn-quote" data-project="Video Editing">Video Editing</button><button class="btn-quote" data-project="Photography">Photography</button><button class="btn-quote" data-project="Influencer Marketing">Influencer Marketing</button><button class="btn-quote" data-project="AI Solutions">AI Solutions</button><button class="btn-quote" data-project="Web Applications">Web Applications</button><button class="btn-quote" data-project="Mobile Apps">Mobile Apps</button><button class="btn-quote" data-project="Business Automation">Business Automation</button></div></details>
+        <aside class="campaign-service-note" aria-labelledby="campaign-service-heading">
+          <p class="eyebrow">Start with your requirements</p>
+          <h3 id="campaign-service-heading">A clear scope.<br>A coordinated team.</h3>
+          <p>Tell us where you need support. We will discuss the right mix of campaign operations, creative delivery and LeaderIQ.</p>
+          <ul><li>Campaign timeline and team setup</li><li>Content volume and approval process</li><li>Platform access and onboarding needs</li><li>Reporting frequency and support hours</li></ul>
+          <a class="btn btn-primary" href="#enquiry" data-service-project="Political Campaign Proposal">Discuss Campaign Support <span aria-hidden="true">&rarr;</span></a>
+          <a class="campaign-platform-link" href="https://leaderiq.in" target="_blank" rel="noopener">Explore LeaderIQ &nearr;</a>
+        </aside>
       </div>
     </section>
 
-    <section class="section dark-band" id="industries"><div class="section-inner"><p class="eyebrow" data-animate>Who we help</p><div class="title-row compact" data-animate><h2>Built for people with something <em>important to grow.</em></h2></div><div class="industry-grid" data-animate><span>Doctors & Hospitals</span><span>Schools & Education</span><span>Restaurants & Hotels</span><span>Builders & Real Estate</span><span>Lawyers & Consultants</span><span>Gyms & Wellness</span><span>Public Leaders</span><span>Creators & Influencers</span><span>Startups & Businesses</span></div></div></section>
+<section class="section dark-band" id="industries"><div class="section-inner"><p class="eyebrow" data-animate>Who we help</p><div class="title-row compact" data-animate><h2>Built for people with something <em>important to grow.</em></h2></div><div class="industry-grid" data-animate><span>Doctors & Hospitals</span><span>Schools & Education</span><span>Restaurants & Hotels</span><span>Builders & Real Estate</span><span>Lawyers & Consultants</span><span>Gyms & Wellness</span><span>Public Leaders</span><span>Creators & Influencers</span><span>Startups & Businesses</span></div></div></section>
 
     <section class="section" id="work"><div class="section-inner"><p class="eyebrow" data-animate>Selected work</p><div class="title-row" data-animate><h2>Built to be <em>remembered.</em></h2><p>Every engagement is designed around a singular idea: create growth that compounds.</p></div><div class="portfolio-grid">
       <a class="portfolio-card tilt-card p-gigway" data-animate href="https://gigway.in" target="_blank" rel="noopener"><div class="portfolio-thumb"><span>G</span></div><div class="portfolio-info"><p>Web application</p><h3>Gigway <i>↗</i></h3></div></a>
@@ -167,16 +195,48 @@
 
     <section class="section section-alt" id="process"><div class="section-inner"><p class="eyebrow" data-animate>Our approach</p><div class="title-row compact" data-animate><h2>Clarity first. <em>Growth follows.</em></h2></div><ol class="process-list"><li data-animate><b>01</b><div><h3>Consultation</h3><p>We listen closely to understand where you are, where you want to go, and what matters.</p></div></li><li data-animate><b>02</b><div><h3>Strategy</h3><p>We turn insight into an ambitious, practical and measurable plan.</p></div></li><li data-animate><b>03</b><div><h3>Execution</h3><p>Our specialists bring the strategy to life with care, pace and precision.</p></div></li><li data-animate><b>04</b><div><h3>Optimization</h3><p>We learn, improve and focus investment on what drives the strongest results.</p></div></li></ol></div></section>
 
-    <section class="section" id="packages"><div class="section-inner"><p class="eyebrow" data-animate>Flexible engagement</p><div class="title-row compact" data-animate><h2>Find the right <em>growth gear.</em></h2></div><div class="package-grid"><article class="package-card" data-animate><p>Starter</p><h3>Establish your foundation.</h3><ul><li>Social media essentials</li><li>Content direction</li><li>Monthly performance review</li></ul><button class="text-link btn-quote" data-project="Starter Package">Request a proposal →</button></article><article class="package-card is-popular" data-animate><span>Most chosen</span><p>Growth</p><h3>Turn attention into momentum.</h3><ul><li>Organic social & content</li><li>Paid media management</li><li>Conversion reporting</li></ul><button class="btn btn-primary btn-quote" data-project="Growth Package">Get proposal →</button></article><article class="package-card" data-animate><p>Premium</p><h3>Build a category-leading brand.</h3><ul><li>Full-funnel marketing</li><li>Creative production</li><li>Strategy & leadership support</li></ul><button class="text-link btn-quote" data-project="Premium Package">Request a proposal →</button></article><article class="package-card" data-animate><p>Enterprise</p><h3>Built around your ambition.</h3><ul><li>Custom integrated team</li><li>Technology & automation</li><li>Dedicated growth roadmap</li></ul><button class="text-link btn-quote" data-project="Enterprise Package">Talk to us →</button></article></div></div></section>
+    <section class="section pricing-section" id="packages">
+      <div class="section-inner" data-wing-content="business">
+        <p class="eyebrow">Business growth plans</p>
+        <div class="title-row compact"><h2>Choose the support<br>your business <em>needs.</em></h2><p>Compare the scope, then discuss the right plan for your goals.</p></div>
+        <div class="package-grid"><article class="package-card"><p>Starter</p><h3>Build your foundation.</h3><div class="plan-price">&#8377;25,000 <small>/ month</small></div><ul><li>Ads setup and management</li><li>Social media essentials</li><li>Monthly performance review</li></ul><a class="btn btn-secondary" href="#enquiry" data-service-project="Starter Package">Discuss Starter <span aria-hidden="true">&rarr;</span></a></article><article class="package-card is-popular"><span class="plan-recommendation">Recommended</span><p>Growth</p><h3>Connect clicks to follow-up.</h3><div class="plan-price">&#8377;45,000 <small>/ month</small></div><ul><li>Campaign landing page</li><li>Meta &amp; Google Ads management</li><li>Lead follow-up automation</li><li>Conversion reporting</li></ul><a class="btn btn-primary" href="#enquiry" data-service-project="Growth Package">Discuss Growth <span aria-hidden="true">&rarr;</span></a></article><article class="package-card"><p>Scale</p><h3>Support a broader growth plan.</h3><div class="plan-price">&#8377;75,000 <small>/ month</small></div><ul><li>Full-funnel marketing</li><li>B2B branding and content</li><li>Creative production</li><li>Strategy and performance reviews</li></ul><a class="btn btn-secondary" href="#enquiry" data-service-project="Scale Package">Discuss Scale <span aria-hidden="true">&rarr;</span></a></article></div>
+        <div class="custom-plan"><div><h3>Need an Enterprise plan?</h3><p>Custom integrated teams, technology and automation, built around your roadmap.</p></div><a class="btn btn-secondary" href="#enquiry" data-service-project="Enterprise Package">Request Custom Quote &rarr;</a></div>
+        <div class="pricing-terms"><p><strong>Payment:</strong> 50% advance and 50% on the agreed monthly milestone.</p><p>Creative volume, platforms, revisions and milestones are agreed in your proposal. Ad spend, third-party tools, shoots, travel and applicable taxes are quoted separately unless explicitly included.</p></div>
+      </div>
+      <div class="section-inner" data-wing-content="political" hidden>
+        <p class="eyebrow">Political campaign packages</p>
+        <div class="title-row compact"><h2>Clear scope.<br><em>Coordinated execution.</em></h2><p>Choose your starting point. We will align delivery with your campaign timeline.</p></div>
+        <div class="package-grid"><article class="package-card"><p>War Room Starter</p><h3>Organise your campaign content.</h3><div class="plan-price">&#8377;1.5 lakh <small>/ month</small></div><ul><li>Daily reels and posters within agreed scope</li><li>Social media management</li><li>Publishing and approval workflow</li></ul><a class="btn btn-secondary" href="#enquiry" data-service-project="War Room Starter Package">Discuss War Room Starter <span aria-hidden="true">&rarr;</span></a></article><article class="package-card is-popular"><span class="plan-recommendation">Recommended</span><p>Campaign + LeaderIQ</p><h3>Bring your team and tools together.</h3><div class="plan-price">&#8377;2.5 lakh <small>/ month</small></div><ul><li>LeaderIQ setup and onboarding</li><li>Volunteer coordination support</li><li>War room operations</li><li>Content planning and campaign reporting</li></ul><a class="btn btn-primary" href="#enquiry" data-service-project="Campaign + LeaderIQ Package">Discuss Campaign + LeaderIQ <span aria-hidden="true">&rarr;</span></a></article><article class="package-card"><p>State / Mega Campaign</p><h3>Plan for a larger operation.</h3><div class="plan-price">Custom quote</div><ul><li>Dedicated ground and digital unit</li><li>Multi-location coordination</li><li>Custom delivery and reporting scope</li></ul><a class="btn btn-secondary" href="#enquiry" data-service-project="State / Mega Campaign Package">Discuss State / Mega Campaign <span aria-hidden="true">&rarr;</span></a></article></div>
+        <div class="pricing-terms"><p><strong>Payment:</strong> 100% advance before campaign launch.</p><p>Content volume, staffing, support hours, turnaround times and LeaderIQ access are defined in your proposal. Ad spend, shoots, travel and applicable taxes are quoted separately unless explicitly included.</p></div>
+      </div>
+    </section>
+
+    <section class="section why-vvbs-section" id="why-vvbs">
+      <div class="section-inner" data-wing-content="business">
+        <p class="eyebrow">Why VVBS &middot; Business growth</p>
+        <div class="title-row compact"><h2>Know what you are<br><em>investing in.</em></h2><p>A useful proposal connects the work, the measurement and the cost. Here is what to compare before choosing your growth partner.</p></div>
+<div class="comparison-scroll" role="region" aria-labelledby="compare-business" tabindex="0"><table class="comparison-table"><caption id="compare-business">Compare your business marketing options</caption><thead><tr><th scope="col">What matters</th><th scope="col">What to ask any agency</th><th scope="col">The VVBS approach</th></tr></thead><tbody><tr><th scope="row">Enquiry journey</th><td>How will ads connect to my website and follow-up?</td><td>Plan ads, landing pages and lead follow-up together within the agreed scope.</td></tr><tr><th scope="row">Measurement</th><td>Which outcomes will we review?</td><td>Define enquiry and conversion reporting, alongside traffic and engagement metrics.</td></tr><tr><th scope="row">Delivery</th><td>Who approves the work, and when is it due?</td><td>Agree deliverables, revision limits and approval milestones before starting.</td></tr><tr><th scope="row">Budget clarity</th><td>What is included beyond the management fee?</td><td>Show the retainer separately from ad spend and other quoted costs.</td></tr><tr><th scope="row">Room to grow</th><td>Can I begin with a focused requirement?</td><td>Start with a service or package, then expand the scope as your needs change.</td></tr></tbody></table></div>
+        <div class="comparison-next"><p>Have a specific goal or an existing brief? Start there.</p><a class="btn btn-primary" href="#enquiry" data-service-project="Business Growth Plan">Discuss My Growth Plan <span aria-hidden="true">&rarr;</span></a></div>
+      </div>
+      <div class="section-inner" data-wing-content="political" hidden>
+        <p class="eyebrow">Why VVBS &middot; Campaign support</p>
+        <div class="title-row compact"><h2>Choose support that<br><em>fits your campaign.</em></h2><p>Compare proposals on the same scope, team requirements and timeline. These are the details we will work through with you.</p></div>
+<div class="comparison-scroll" role="region" aria-labelledby="compare-political" tabindex="0"><table class="comparison-table"><caption id="compare-political">Compare your campaign support options</caption><thead><tr><th scope="col">What matters</th><th scope="col">What to ask any agency</th><th scope="col">The VVBS approach</th></tr></thead><tbody><tr><th scope="row">Campaign coordination</th><td>Who owns daily priorities and team updates?</td><td>Define responsibilities and reporting for the agreed war room scope.</td></tr><tr><th scope="row">Platform fit</th><td>Which tools and features will my team actually use?</td><td>Discuss LeaderIQ access, available features and onboarding before committing.</td></tr><tr><th scope="row">Content delivery</th><td>How are volume, approvals and turnaround agreed?</td><td>Set content requirements and an approval workflow in the campaign proposal.</td></tr><tr><th scope="row">Team support</th><td>What staffing and support hours are included?</td><td>Agree team responsibilities and support coverage for your campaign timeline.</td></tr><tr><th scope="row">Commercial clarity</th><td>What does the campaign fee cover?</td><td>Document the package scope, separately quoted costs and advance payment terms.</td></tr></tbody></table></div>
+        <div class="comparison-next"><p>Bring your campaign timeline and team requirements.</p><a class="btn btn-primary" href="#enquiry" data-service-project="Political Campaign Proposal">Discuss Campaign Scope <span aria-hidden="true">&rarr;</span></a></div>
+      </div>
+    </section>
 
     <section class="section dark-band"><div class="section-inner"><p class="eyebrow" data-animate>Client perspective</p><div class="testimonial-grid"><figure class="testimonial-card" data-animate><blockquote>“Great communication throughout the project and delivered exactly what we needed, on time.”</blockquote><figcaption><strong>Janak</strong><span>gigway.in</span></figcaption></figure><figure class="testimonial-card" data-animate><blockquote>“Professional work and quick turnaround. Would definitely work with them again.”</blockquote><figcaption><strong>Manjari</strong><span>Founder, Tapasya App</span></figcaption></figure><figure class="testimonial-card" data-animate><blockquote>“They understood our requirements quickly and built exactly what we had in mind.”</blockquote><figcaption><strong>Vijay Prakash Mishra</strong><span>Founder, Orenzaa.com</span></figcaption></figure></div></div></section>
 
-    <section class="section faq-section" id="faq"><div class="section-inner narrow"><p class="eyebrow" data-animate>FAQ</p><h2 data-animate>Questions, <em>answered.</em></h2><div class="faq-list" data-animate><details><summary>What types of clients do you work with?<span>+</span></summary><p>We work with ambitious businesses, public leaders and public figures across India—from local service brands to national campaigns.</p></details><details><summary>Do you offer customised marketing plans?<span>+</span></summary><p>Yes. Every plan begins with your objective, audience, market and available opportunity. We do not sell one-size-fits-all campaigns.</p></details><details><summary>Can I start with one service?<span>+</span></summary><p>Absolutely. We can begin with the service that creates the greatest immediate value, then build a more integrated programme when the time is right.</p></details><details><summary>How soon can we get started?<span>+</span></summary><p>After an initial consultation and proposal approval, we align on the first 30-day plan and start onboarding promptly.</p></details></div></div></section>
+    <section class="section faq-section" id="faq">
+<div class="section-inner narrow" data-wing-content="business"><p class="eyebrow">Business growth FAQ</p><h2>Questions, <em>answered.</em></h2><div class="faq-list"><details><summary>Can I start with one service?<span aria-hidden="true">+</span></summary><p>Yes. Start with a website, ads, content or automation requirement, then expand the scope when needed.</p></details><details><summary>Is ad spend included in the retainer?<span aria-hidden="true">+</span></summary><p>Ad spend is separate unless explicitly included in your proposal. Tools, shoots, travel and applicable taxes are also clarified before work begins.</p></details><details><summary>What is included in my plan?<span aria-hidden="true">+</span></summary><p>Your proposal defines platforms, deliverables, creative volume, revisions and reporting. We agree these details before onboarding.</p></details><details><summary>How do payments and onboarding work?<span aria-hidden="true">+</span></summary><p>Business plans require 50% advance and 50% on the agreed monthly milestone. The start date follows scope approval, payment and receipt of required access and assets.</p></details></div></div>
+<div class="section-inner narrow" data-wing-content="political" hidden><p class="eyebrow">Campaign support FAQ</p><h2>Questions, <em>answered.</em></h2><div class="faq-list"><details><summary>Can we discuss LeaderIQ before choosing a package?<span aria-hidden="true">+</span></summary><p>Yes. Request a demo to discuss available features, access and onboarding for your team.</p></details><details><summary>Do packages include round-the-clock support?<span aria-hidden="true">+</span></summary><p>Support hours, staffing and escalation arrangements are agreed in your proposal. Round-the-clock coverage is not included by default.</p></details><details><summary>How are content delivery times decided?<span aria-hidden="true">+</span></summary><p>We agree content volume, required source materials, approval responsibilities and turnaround times before launch.</p></details><details><summary>What are the campaign payment terms?<span aria-hidden="true">+</span></summary><p>Campaign work requires 100% advance before launch. Your proposal defines the scope, timeline and any separately quoted costs.</p></details></div></div>
+</section>
 
-    <section class="section contact-section" id="enquiry"><div class="section-inner contact-layout"><div data-animate><p class="eyebrow">Let’s start a conversation</p><h2>Ready to make your next move <em>matter?</em></h2><p class="contact-copy">Tell us where you want to go. We’ll help you find the most effective way there.</p><a href="tel:+919717233972" class="contact-number">+91 97172 33972 <span>↗</span></a></div><div class="enquiry-card" data-animate><form id="enquiry-form" class="enquiry-form" novalidate><div class="form-row"><div class="form-group"><label for="name">Name *</label><input id="name" name="name" autocomplete="name" required></div><div class="form-group"><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div></div><div class="form-row"><div class="form-group"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required></div><div class="form-group"><label for="business_name">Business / Organisation</label><input id="business_name" name="business_name" autocomplete="organization"></div></div><div class="form-row"><div class="form-group"><label for="project_type">Service *</label><select id="project_type" name="project_type" required><option value="">Select a service</option><option>Website Development</option><option>Social Media Marketing</option><option>Performance Marketing</option><option>Google Ads</option><option>Facebook & Instagram Ads</option><option>SEO</option><option>Branding & Graphic Design</option><option>Creative Content</option><option>AI Solutions</option><option>Web Applications</option><option>Mobile Apps</option><option>Business Automation</option><option>Other</option></select></div><div class="form-group"><label for="budget_range">Monthly budget *</label><select id="budget_range" name="budget_range" required><option value="">Select range</option><option value="Under ₹25,000">Under ₹25,000</option><option value="₹25,000 – ₹50,000">₹25,000 – ₹50,000</option><option value="₹50,000 – ₹1,00,000">₹50,000 – ₹1,00,000</option><option value="₹1,00,000+">₹1,00,000+</option></select></div></div><div class="form-group"><label for="message">How can we help?</label><textarea id="message" name="message" rows="3" placeholder="Tell us about your goals."></textarea></div><button type="submit" id="submit-btn" class="btn btn-primary btn-block">Request Free Consultation <span>→</span></button><p class="form-note">Your details stay private. We’ll contact you shortly.</p></form><div id="form-status" class="form-status" hidden role="status"></div></div></div></section>
+    <section class="section contact-section" id="enquiry"><div class="section-inner contact-layout"><div data-animate><div data-wing-content="business"><p class="eyebrow">Let us plan your business growth</p><h2>Tell us where you want<br>to <em>grow next.</em></h2><p class="contact-copy">Share your business goals, current challenges and budget. We will discuss the scope and recommend a practical starting point.</p></div><div data-wing-content="political" hidden><p class="eyebrow">Discuss your campaign requirements</p><h2>Bring your team.<br>Let us plan the <em>support.</em></h2><p class="contact-copy">Share your campaign timeline, location and team requirements. We will discuss content delivery, coordination and LeaderIQ access.</p></div><a href="tel:+919717233972" class="contact-number">+91 97172 33972 <span>↗</span></a></div><div class="enquiry-card" data-animate><form id="enquiry-form" class="enquiry-form" novalidate><div class="form-row"><div class="form-group"><label for="name">Name *</label><input id="name" name="name" autocomplete="name" required></div><div class="form-group"><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required></div></div><div class="form-row"><div class="form-group"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required></div><div class="form-group"><label for="business_name">Business / Organisation</label><input id="business_name" name="business_name" autocomplete="organization"></div></div><div class="form-row"><div class="form-group"><label for="project_type">Service / Package *</label><select id="project_type" name="project_type" required><option value="">Select a service</option><option>Website Development</option><option>Social Media Marketing</option><option>Performance Marketing</option><option>Google Ads</option><option>Facebook & Instagram Ads</option><option>SEO</option><option>Branding & Graphic Design</option><option>Creative Content</option><option>AI Solutions</option><option>Web Applications</option><option>Mobile Apps</option><option>Business Automation</option><option>Other</option><optgroup label="Additional services"><option>Video Editing</option><option>Influencer Marketing</option><option>War Room Coordination</option><option>LeaderIQ Setup &amp; Support</option><option>Event Reels &amp; Posters</option><option>Volunteer Coordination</option><option>Media Monitoring</option><option>Campaign Reporting</option></optgroup><optgroup label="Growth tracks"><option>Business Growth Plan</option><option>Political Campaign Proposal</option><option>LeaderIQ Demo</option></optgroup><optgroup label="Packages"><option>Starter Package</option><option>Growth Package</option><option>Scale Package</option><option>Enterprise Package</option><option>War Room Starter Package</option><option>Campaign + LeaderIQ Package</option><option>State / Mega Campaign Package</option></optgroup></select></div><div class="form-group"><label for="budget_range">Monthly budget *</label><select id="budget_range" name="budget_range" required><option value="">Select range</option><option value="Under ₹25,000">Under ₹25,000</option><option value="₹25,000 – ₹50,000">₹25,000 – ₹50,000</option><option value="₹50,000 – ₹1,00,000">₹50,000 – ₹1,00,000</option><option value="₹1,00,000+">₹1,00,000+</option><option>Need a custom quote</option></select></div></div><div class="form-group"><label for="message">How can we help?</label><textarea id="message" name="message" rows="3" placeholder="Tell us about your goals."></textarea></div><button type="submit" id="submit-btn" class="btn btn-primary btn-block">Request Free Consultation <span>→</span></button><p class="form-note">Your details stay private. We’ll contact you shortly.</p></form><div id="form-status" class="form-status" hidden role="status"></div></div></div></section>
   </main>
-  <footer class="footer"><div class="footer-inner"><a href="#top" class="logo">VVBS<span>Digital</span></a><p>Digital marketing, creative and technology for growth-minded people.</p><div><a href="mailto:tellitorg1@gmail.com">tellitorg1@gmail.com</a><a href="https://wa.me/919717233972" target="_blank" rel="noopener">WhatsApp</a><a href="tel:+919717233972">+91 97172 33972</a></div><small>© <span id="year"></span> VVBSDigital. All rights reserved.</small></div></footer>
+  <footer class="footer"><div class="footer-inner"><a href="#top" class="logo">VVBS<span>Digital</span></a><p>Digital marketing, creative and technology for growth-minded people.</p><div><a href="mailto:growth@vvbsdigital.com">growth@vvbsdigital.com</a><a href="https://wa.me/919717233972" target="_blank" rel="noopener">WhatsApp</a><a href="tel:+919717233972">+91 97172 33972</a></div><small>© <span id="year"></span> VVBSDigital. All rights reserved.</small></div></footer>
   <a class="whatsapp-float" href="https://wa.me/919717233972?text=Hi%20VVBSDigital%2C%20I%20would%20like%20to%20discuss%20my%20digital%20growth." target="_blank" rel="noopener" aria-label="Chat with VVBSDigital on WhatsApp">☏</a>
-  <script src="js/main.js"></script><script src="js/hero-parallax.js"></script><script src="js/enquiry.js"></script><script src="js/contact-premium.js"></script>
+  <script src="js/main.js"></script><script src="js/navigation.js"></script><script src="js/wing-switcher.js"></script><script src="js/hero-parallax.js"></script><script src="js/enquiry.js"></script><script src="js/contact-premium.js"></script>
 </body>
 </html>
