@@ -9,3 +9,8 @@
   .nav-links a:not(.nav-cta), .nav-links .nav-cta { display: block; padding: 12px 14px; min-height: 44px; }
   .navbar.menu-open { background: var(--bg); }
 }
+
+.logo { display: inline-flex; flex-shrink: 0; align-items: center; }
+.logo img { display: block; width: 175px; height: 56px; object-fit: contain; }
+.footer .logo img { width: 220px; height: auto; }
+@media (max-width: 560px) { .logo img { width: 150px; height: 48px; } }
