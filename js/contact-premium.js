@@ -10,7 +10,7 @@
 
   const information = document.createElement('div');
   information.className = 'contact-information';
-  information.innerHTML = '<div><b>Phone</b><a href="tel:+919717233972">+91 97172 33972</a></div><div><b>Email</b><a href="mailto:growth@vvbsdigital.com">growth@vvbsdigital.com</a></div><div><b>Website</b><span>VVBSdigital.com</span></div><div><b>Office</b><span>Sector 62, Noida, Uttar Pradesh</span></div><div><b>Business Hours</b><span>Monday–Saturday, 10 AM–7 PM</span></div>';
+  information.innerHTML = '<div><b>Phone</b><a href="tel:+919717233972">+91 97172 33972</a></div><div><b>Email</b><a href="mailto:growth@vvbsdigital.com">growth@vvbsdigital.com</a></div><div><b>Website</b><span>VVBSdigital.com</span></div><div><b>Office</b><span>Uttam Nagar, Delhi, India</span></div><div><b>Business Hours</b><span>Monday–Saturday, 10 AM–7 PM</span></div>';
   intro.append(information);
 
   const visual = document.createElement('figure');
